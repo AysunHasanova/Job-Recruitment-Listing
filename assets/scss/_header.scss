@@ -1,0 +1,122 @@
+header {
+  background-image: url(/images/bg-image.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .header {
+    background-color: #3d1737;
+    padding: 10px 0;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .logo {
+        width: 200px;
+      }
+      nav {
+        align-items: center;
+        justify-content: space-between;
+        gap: 100px;
+        .nav-list {
+          display: flex;
+          gap: 30px;
+          margin: 0 !important;
+          padding: 0 !important;
+
+          li {
+            a {
+              color: #fff;
+              &:hover {
+                color: #ffbb33;
+              }
+            }
+          }
+        }
+
+        .log {
+          color: #fff;
+          &:hover {
+            color: #ffbb33;
+          }
+        }
+        .post-job {
+          color: #fff;
+          letter-spacing: 1.3px;
+          font-size: 18px;
+          font-weight: bold;
+          background-color: #ffbb33;
+          padding: 9px 20px;
+          border-radius: 6px;
+          transition: 0.3s ease;
+          transform: scale(1);
+          &:hover {
+            transform: scale(0.9);
+            background-color: #db9d32;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    background-color: #3d1737ce;
+    .container {
+      display: flex;
+      .text {
+        padding: 200px 0;
+        width: 50%;
+        h1 {
+          font-weight: bolder;
+          font-size: 60px;
+          color: #fff;
+          &::before {
+            display: block;
+            content: "";
+            background-color: #ffbb33;
+            width: 80px;
+            height: 2px;
+          }
+          span {
+            color: #ffbb33;
+          }
+        }
+        p {
+          padding: 0 !important;
+          margin: 0 !important;
+          color: #fff;
+          font-size: 20px;
+          letter-spacing: 3px;
+        }
+        .my-4 {
+          .browse-job {
+            color: #fff;
+            letter-spacing: 1.3px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #ffbb33;
+            padding: 9px 20px;
+            border-radius: 6px;
+            transition: 0.3s ease;
+            transform: scale(1);
+            border: none;
+            &:hover {
+              transform: scale(0.9);
+              background-color: #db9d32;
+            }
+          }
+        }
+      }
+      .image {
+        background-image: url(/images/Circle-BG-3.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 0 80px 0 0 ;
+        img {
+          width: 450px;
+        }
+      }
+    }
+  }
+}
