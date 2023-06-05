@@ -1,0 +1,52 @@
+.counter {
+  z-index: 2;
+  .container {
+    padding: 40px 0;
+    color: #000;
+    .num {
+      font-size: 40px;
+      font-weight: bold;
+    }
+    .plus {
+      position: relative;
+      bottom: 30px;
+      color: #ffbb33;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .topic {
+      color: #462240;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    #search {
+      position: relative;
+      bottom: 320px;
+      left: 780px;
+      border-radius: 10px;
+      width: 450px;
+      padding: 0 !important;
+      background-image: url(/images/shot-of-a-group-of-businesspeople-using-a-laptop-w-YUBSH4F.jpg);
+      background-position: center;
+      background-size: cover;
+      border: 10px solid white;
+      
+      select {
+        background-color: transparent;
+        color: #fff;
+        option {
+          color: #000;
+        }
+      }
+      a {
+        color: white;
+        border-radius: 7px;
+        padding: 10px 20px;
+        background-color: #ffbb33;
+        &:hover {
+          background-color: #db9d32;
+        }
+      }
+    }
+  }
+}

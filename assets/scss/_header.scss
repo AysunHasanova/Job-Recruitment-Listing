@@ -111,6 +111,10 @@ header {
           }
         }
         .links {
+          p{
+            font-size: 14px;
+            
+          }
           .icons {
             display: flex;
            margin: 0 !important;
@@ -142,7 +146,7 @@ header {
         img {
           width: 420px;
           position: relative;
-          top: 10px;
+          top: 0;
           left: 70px;
         }
         .pics {

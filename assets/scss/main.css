@@ -4,6 +4,7 @@
   text-decoration: none !important;
   list-style: none;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 header {
@@ -113,6 +114,9 @@ header .content .container .text .my-4 .browse-job:hover {
   transform: scale(0.9);
   background-color: #db9d32;
 }
+header .content .container .text .links p {
+  font-size: 14px;
+}
 header .content .container .text .links .icons {
   display: flex;
   margin: 0 !important;
@@ -143,7 +147,7 @@ header .content .container .image {
 header .content .container .image img {
   width: 420px;
   position: relative;
-  top: 10px;
+  top: 0;
   left: 70px;
 }
 header .content .container .image .pics {
@@ -180,4 +184,56 @@ header .content .container .image .pics.woman {
   position: absolute;
   top: 200px;
   left: 450px;
+}
+
+.counter {
+  z-index: 2;
+}
+.counter .container {
+  padding: 40px 0;
+  color: #000;
+}
+.counter .container .num {
+  font-size: 40px;
+  font-weight: bold;
+}
+.counter .container .plus {
+  position: relative;
+  bottom: 30px;
+  color: #ffbb33;
+  font-size: 20px;
+  font-weight: bold;
+}
+.counter .container .topic {
+  color: #462240;
+  font-size: 24px;
+  font-weight: 600;
+}
+.counter .container #search {
+  position: relative;
+  bottom: 320px;
+  left: 780px;
+  border-radius: 10px;
+  width: 450px;
+  padding: 0 !important;
+  background-image: url(/images/shot-of-a-group-of-businesspeople-using-a-laptop-w-YUBSH4F.jpg);
+  background-position: center;
+  background-size: cover;
+  border: 10px solid white;
+}
+.counter .container #search select {
+  background-color: transparent;
+  color: #fff;
+}
+.counter .container #search select option {
+  color: #000;
+}
+.counter .container #search a {
+  color: white;
+  border-radius: 7px;
+  padding: 10px 20px;
+  background-color: #ffbb33;
+}
+.counter .container #search a:hover {
+  background-color: #db9d32;
 }/*# sourceMappingURL=main.css.map */
