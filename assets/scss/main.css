@@ -41,6 +41,9 @@ header .header .container nav .nav-list li a {
 header .header .container nav .nav-list li a:hover {
   color: #ffbb33;
 }
+header .header .container nav .nav-list li .dropdown ul {
+  background-color: #3d1737;
+}
 header .header .container nav .log {
   color: #fff;
 }
@@ -69,7 +72,7 @@ header .content .container {
   display: flex;
 }
 header .content .container .text {
-  padding: 200px 0;
+  padding: 100px 0;
   width: 50%;
 }
 header .content .container .text h1 {
@@ -110,13 +113,71 @@ header .content .container .text .my-4 .browse-job:hover {
   transform: scale(0.9);
   background-color: #db9d32;
 }
+header .content .container .text .links .icons {
+  display: flex;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 7px;
+  margin-top: 10px !important;
+}
+header .content .container .text .links .icons a {
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: 5px 9px;
+  background-color: #ffbb33;
+  border-radius: 50%;
+}
+header .content .container .text .links .icons a:hover {
+  background-color: #3d1737;
+  color: #ffbb33;
+}
 header .content .container .image {
   background-image: url(/images/Circle-BG-3.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0 80px 0 0;
+  position: relative;
 }
 header .content .container .image img {
-  width: 450px;
+  width: 420px;
+  position: relative;
+  top: 10px;
+  left: 70px;
+}
+header .content .container .image .pics {
+  border-radius: 50%;
+}
+header .content .container .image .pics.guy {
+  position: absolute;
+  top: 420px;
+  left: 480px;
+  width: 60px;
+  height: 60px;
+  border: 3px solid #ffbb33;
+}
+header .content .container .image .pics.man {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #ffbb33;
+}
+header .content .container .image .pics.redhead {
+  width: 70px;
+  height: 70px;
+  border: 3px solid #4e1f47;
+  position: absolute;
+  left: 0;
+  top: 470px;
+}
+header .content .container .image .pics.woman {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #fff;
+  position: absolute;
+  top: 200px;
+  left: 450px;
 }/*# sourceMappingURL=main.css.map */

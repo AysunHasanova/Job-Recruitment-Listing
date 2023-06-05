@@ -3,7 +3,6 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
   .header {
     background-color: #3d1737;
     padding: 10px 0;
@@ -29,6 +28,11 @@ header {
               color: #fff;
               &:hover {
                 color: #ffbb33;
+              }
+            }
+            .dropdown{
+              ul{
+                background-color: #3d1737;
               }
             }
           }
@@ -64,7 +68,7 @@ header {
     .container {
       display: flex;
       .text {
-        padding: 200px 0;
+        padding: 100px 0;
         width: 50%;
         h1 {
           font-weight: bolder;
@@ -106,15 +110,75 @@ header {
             }
           }
         }
+        .links {
+          .icons {
+            display: flex;
+           margin: 0 !important;
+           padding: 0 !important;
+           gap: 7px;
+           margin-top: 10px !important;
+            a {
+              font-size: 14px;
+              color: #fff;
+              border: 1px solid transparent;
+              padding:5px 9px;
+              background-color: #ffbb33;
+              border-radius: 50%;
+              &:hover{
+                background-color: #3d1737;
+                color: #ffbb33;
+              }
+            }
+          }
+        }
       }
       .image {
         background-image: url(/images/Circle-BG-3.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 0 80px 0 0 ;
+        padding: 0 80px 0 0;
+        position: relative;
         img {
-          width: 450px;
+          width: 420px;
+          position: relative;
+          top: 10px;
+          left: 70px;
+        }
+        .pics {
+          border-radius: 50%;
+          &.guy {
+            position: absolute;
+            top: 420px;
+            left: 480px;
+            width: 60px;
+            height: 60px;
+            border: 3px solid #ffbb33;
+          }
+          &.man {
+            position: absolute;
+            top: 200px;
+            left: 100px;
+            width: 50px;
+            height: 50px;
+            border: 3px solid #ffbb33;
+          }
+          &.redhead {
+            width: 70px;
+            height: 70px;
+            border: 3px solid #4e1f47;
+            position: absolute;
+            left: 0;
+            top: 470px;
+          }
+          &.woman {
+            width: 80px;
+            height: 80px;
+            border: 3px solid #fff;
+            position: absolute;
+            top: 200px;
+            left: 450px;
+          }
         }
       }
     }
