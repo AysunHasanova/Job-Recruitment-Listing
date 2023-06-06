@@ -1,6 +1,7 @@
 .counter {
   z-index: 2;
   .container {
+    justify-content: space-evenly;
     padding: 40px 0;
     color: #000;
     .num {
@@ -21,10 +22,11 @@
     }
     #search {
       position: relative;
-      bottom: 320px;
-      left: 780px;
+      bottom: 80px;
+      left: 80px;
       border-radius: 10px;
-      width: 450px;
+      width: 550px;
+      height: 350px;
       padding: 0 !important;
       background-image: url(/images/shot-of-a-group-of-businesspeople-using-a-laptop-w-YUBSH4F.jpg);
       background-position: center;

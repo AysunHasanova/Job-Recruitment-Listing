@@ -190,6 +190,7 @@ header .content .container .image .pics.woman {
   z-index: 2;
 }
 .counter .container {
+  justify-content: space-evenly;
   padding: 40px 0;
   color: #000;
 }
@@ -211,10 +212,11 @@ header .content .container .image .pics.woman {
 }
 .counter .container #search {
   position: relative;
-  bottom: 320px;
-  left: 780px;
+  bottom: 80px;
+  left: 80px;
   border-radius: 10px;
-  width: 450px;
+  width: 550px;
+  height: 350px;
   padding: 0 !important;
   background-image: url(/images/shot-of-a-group-of-businesspeople-using-a-laptop-w-YUBSH4F.jpg);
   background-position: center;
@@ -236,4 +238,45 @@ header .content .container .image .pics.woman {
 }
 .counter .container #search a:hover {
   background-color: #db9d32;
+}
+
+.job-list .container .row {
+  margin-top: 70px;
+  align-items: center;
+  justify-content: center;
+}
+.job-list .container .row .col {
+  width: 300px;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.368627451);
+}
+.job-list .container .row .col img {
+  width: 70px;
+}
+.job-list .container .row .col .city {
+  font-size: 15px;
+}
+.job-list .container .row .col .marka {
+  font-size: 20px;
+}
+.job-list .container .row .col .add {
+  border-radius: 7px;
+  padding: 15px 20px;
+  background-color: rgba(0, 0, 0, 0.2549019608);
+  font-size: 18px;
+  color: #fff;
+}
+.job-list .container .row .col .add:hover {
+  background-color: #55204e;
+}
+.job-list .container .row .col .detail {
+  background-color: #ffbb33;
+  padding: 15px 25px;
+  border-radius: 6px;
+  transition: 0.6s;
+  border: none;
+  color: #fff;
+}
+.job-list .container .row .col .detail:hover {
+  transform: scale(0.9);
+  background-color: #a87b21;
 }/*# sourceMappingURL=main.css.map */

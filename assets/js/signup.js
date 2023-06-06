@@ -9,6 +9,7 @@ let userData = JSON.parse(localStorage.getItem("usersData")) ?? [];
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   let userObj = {
+    id: Date.now(),
     username: inputName.value,
     email: inputEmail.value,
     password: inputPassword.value,
@@ -20,7 +21,7 @@ form.addEventListener("submit", function (e) {
       break;
     }
   }
-  // console.log(userData.includes(userObj));
+
   if (found) {
     alert("User is already");
   } else {
@@ -28,6 +29,6 @@ form.addEventListener("submit", function (e) {
 
     localStorage.setItem("usersData", JSON.stringify(userData));
 
-    window.location = "login.html";
+    window.location = `login.html?id=${userObj.id}`;
   }
 });
