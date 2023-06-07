@@ -296,11 +296,24 @@ header .content .container .image .pics.woman {
   transform: scale(0.9);
   background-color: #a87b21;
 }
+.job-list .container .row .col .fa-star,
+.job-list .container .row .col .fa-star-half-stroke {
+  color: #55204e;
+}
+.job-list .container .row .col .fa-dollar-sign {
+  color: #ffbb33;
+  font-size: 20px;
+}
+.job-list .container .row .col .fa-clock-rotate-left {
+  color: #ffbb33;
+}
 
 .job-interview {
   background-image: url(/images/Circle-BG-3.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.0666666667);
   padding: 100px 0 0 0;
 }
 .job-interview .container .row .col h2 {
@@ -338,7 +351,7 @@ header .content .container .image .pics.woman {
 }
 .job-interview .container .row .col .year {
   width: 40%;
-  padding: 15px 20px;
+  padding: 15px 18px;
   background-color: #fff;
   font-size: 30px;
   border-radius: 10px;
@@ -354,6 +367,42 @@ header .content .container .image .pics.woman {
   font-size: 14px;
 }
 .job-interview .container .row .col .year .year-exp {
-  font-weight: bold;
+  font-weight: bolder;
   font-size: 16px;
+}
+
+.work-section {
+  padding: 60px 0;
+}
+.work-section .container h1::before {
+  margin-bottom: 30px;
+  display: block;
+  content: "";
+  background-color: #ffbb33;
+  width: 120px;
+  height: 3px;
+  position: relative;
+  left: 45%;
+}
+.work-section .container .row {
+  gap: 20px;
+}
+.work-section .container .row .col {
+  width: 360px;
+  box-shadow: 1px 2px 25px rgba(0, 0, 0, 0.2549019608);
+}
+.work-section .container .row .col div img {
+  width: 80px;
+}
+.work-section .container .row .col div p {
+  font-size: 40px;
+  color: #ffbb33;
+  font-weight: bold;
+}
+.work-section .container .row .col h3 {
+  font-weight: bolder;
+}
+.work-section .container .row .col p {
+  opacity: 0.8;
+  font-size: 14px;
 }/*# sourceMappingURL=main.css.map */

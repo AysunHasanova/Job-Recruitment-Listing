@@ -2,13 +2,15 @@
   background-image: url(/images/Circle-BG-3.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  background-color: #00000011;
   padding: 100px 0 0 0;
   .container {
     .row {
       .col {
         h2 {
-            font-size: 36px;
-            font-weight: bold;
+          font-size: 36px;
+          font-weight: bold;
           &::before {
             margin-bottom: 40px;
             display: block;
@@ -22,6 +24,7 @@
           opacity: 0.8;
           font-size: 14px;
         }
+        
         .discover {
           background-color: #ffbb33;
           border: none;
@@ -41,7 +44,7 @@
         }
         .year {
           width: 40%;
-          padding: 15px 20px;
+          padding: 15px 18px;
           background-color: #fff;
           font-size: 30px;
           border-radius: 10px;
@@ -56,7 +59,7 @@
             font-size: 14px;
           }
           .year-exp {
-            font-weight: bold;
+            font-weight: bolder;
             font-size: 16px;
           }
         }
