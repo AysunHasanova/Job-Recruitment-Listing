@@ -15,10 +15,11 @@ nums.forEach((num) => {
   }, duration);
 });
 
+let intervalNum = 9000;
 numbers.forEach((num) => {
   let startNum = 0;
   let endNum = parseInt(num.getAttribute("data-val"));
-  let duration = Math.floor(interval / endNum);
+  let duration = Math.floor(intervalNum / endNum);
   let counter = setInterval(function () {
     startNum += 1;
     num.textContent = startNum;
