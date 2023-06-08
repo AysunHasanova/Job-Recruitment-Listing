@@ -1,0 +1,16 @@
+.content{
+    .container{
+        h1{
+            color: #fff;
+        }
+        p{
+            color: #fff;
+            a{
+                color: #ffbb33;
+                &:hover{
+                    color: #7e3374;
+                }
+            }
+        }
+    }
+}

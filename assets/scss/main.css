@@ -186,31 +186,31 @@ header .content .container .image .pics.woman {
   left: 450px;
 }
 
-.counter {
+.search-section {
   z-index: 2;
 }
-.counter .container {
+.search-section .container {
   justify-content: space-evenly;
   padding: 40px 0;
   color: #000;
 }
-.counter .container .num {
+.search-section .container .num {
   font-size: 40px;
   font-weight: bold;
 }
-.counter .container .plus {
+.search-section .container .plus {
   position: relative;
   bottom: 30px;
   color: #ffbb33;
   font-size: 20px;
   font-weight: bold;
 }
-.counter .container .topic {
+.search-section .container .topic {
   color: #462240;
   font-size: 24px;
   font-weight: 600;
 }
-.counter .container #search {
+.search-section .container #search {
   position: relative;
   bottom: 80px;
   left: 80px;
@@ -223,20 +223,20 @@ header .content .container .image .pics.woman {
   background-size: cover;
   border: 10px solid white;
 }
-.counter .container #search select {
+.search-section .container #search select {
   background-color: transparent;
   color: #fff;
 }
-.counter .container #search select option {
+.search-section .container #search select option {
   color: #000;
 }
-.counter .container #search a {
+.search-section .container #search a {
   color: white;
   border-radius: 7px;
   padding: 10px 20px;
   background-color: #ffbb33;
 }
-.counter .container #search a:hover {
+.search-section .container #search a:hover {
   background-color: #db9d32;
 }
 
@@ -407,7 +407,7 @@ header .content .container .image .pics.woman {
   font-size: 14px;
 }
 
-.newsletter {
+.logo-slider {
   background-color: #462240;
 }
 @keyframes scroll {
@@ -418,35 +418,35 @@ header .content .container .image .pics.woman {
     transform: translateX(-1000px);
   }
 }
-.newsletter .container .slider {
+.logo-slider .container .slider {
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
   height: 100px;
   margin: auto;
   overflow: hidden;
   position: relative;
 }
-.newsletter .container .slider::before, .newsletter .container .slider::after {
+.logo-slider .container .slider::before, .logo-slider .container .slider::after {
   content: "";
   height: 100px;
   position: absolute;
   width: 200px;
   z-index: 2;
 }
-.newsletter .container .slider::after {
+.logo-slider .container .slider::after {
   right: 0;
   top: 0;
   transform: rotateZ(180deg);
 }
-.newsletter .container .slider::before {
+.logo-slider .container .slider::before {
   left: 0;
   top: 0;
 }
-.newsletter .container .slider .slide-track {
+.logo-slider .container .slider .slide-track {
   animation: scroll 50s linear infinite;
   display: flex;
   width: 500px;
 }
-.newsletter .container .slider .slide {
+.logo-slider .container .slider .slide {
   height: 100px;
   width: 250px;
 }/*# sourceMappingURL=main.css.map */

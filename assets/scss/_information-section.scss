@@ -1,0 +1,37 @@
+.information-section {
+  background-image: url(/images/Paper-Texture-1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0;
+  .container {
+    .row {
+      gap: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .col {
+        width: 350px;
+        padding: 10px 30px 20px 30px;
+        border-radius: 25px;
+        border: 1px solid #000;
+        .fa-phone,.fa-location-dot,.fa-envelope{
+          left: 20px;
+          bottom: 40px;
+          position: relative;
+          font-size: 24px;
+          border-radius: 10px;
+          color: #ffbb33;
+          padding: 25px 30px;
+          background-color: #55204e;
+        }
+        h4{
+            font-weight: bolder;
+        }
+        a{
+            color: #000;
+        }
+      }
+    }
+  }
+}
