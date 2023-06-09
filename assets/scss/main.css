@@ -309,7 +309,7 @@ header .content .container .image .pics.woman {
 }
 
 .job-interview {
-  background-image: url(/images/Circle-BG-3.png);
+  background-image: url(/images/Paper-Texture-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -449,4 +449,51 @@ header .content .container .image .pics.woman {
 .logo-slider .container .slider .slide {
   height: 100px;
   width: 250px;
+}
+
+footer {
+  background-color: #3d1737;
+  padding: 40px 0;
+  color: #fff;
+}
+footer img {
+  width: 250px;
+}
+footer .col-3 h3::before {
+  display: block;
+  content: "";
+  background-color: #ffbb33;
+  height: 2px;
+  width: 25%;
+  margin-bottom: 20px;
+}
+footer .col-3 a {
+  color: #fff;
+}
+footer .col-3 a:hover {
+  color: #ffbb33;
+}
+footer .col-3 .fa-arrow-right {
+  color: #ffbb33;
+}
+footer .col-3 .icons {
+  display: flex;
+  padding: 0 !important;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+footer .col-3 .icons a {
+  border-radius: 50%;
+  background-color: #ffbb33;
+  padding: 5px 7px;
+}
+footer .col-3 .icons a:hover {
+  background-color: #3d1737;
+  color: #ffbb33;
+}
+footer hr {
+  color: #ffbb33;
+}
+footer .under ul li:hover {
+  color: #ffbb33;
 }/*# sourceMappingURL=main.css.map */

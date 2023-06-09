@@ -1,0 +1,38 @@
+.vision-section .row .col-6 {
+  background-image: url(/images/smiling-interracial-business-people.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 0 !important;
+  color: #fff;
+}
+.vision-section .row .col-6 h1::before {
+  margin-bottom: 30px;
+  display: block;
+  content: "";
+  background-color: #ffbb33;
+  width: 120px;
+  height: 3px;
+}
+.vision-section .row .col-6 h1.mission::before {
+  margin-bottom: 30px;
+  display: block;
+  content: "";
+  background-color: #55204e;
+  width: 120px;
+  height: 3px;
+}
+.vision-section .row .col-6 p {
+  font-size: 14px;
+}
+.vision-section .row .col-6 .purple {
+  background-color: #55204e;
+  padding: 30px;
+}
+.vision-section .row .col-6 .yellow {
+  background-color: #ffbb33;
+  padding: 30px;
+}
+.vision-section .row .col-6 .under-text {
+  margin: 0 !important;
+}/*# sourceMappingURL=about.css.map */
