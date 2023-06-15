@@ -1,5 +1,5 @@
 .work-section {
-    padding: 60px 0;
+  padding: 60px 0;
   .container {
     h1::before {
       margin-bottom: 30px;
@@ -11,30 +11,32 @@
       position: relative;
       left: 45%;
     }
-    .row{
-        gap: 20px;
-        .col{
-            width: 360px;
-            box-shadow: 1px 2px 25px #00000041;
-            div{
-                img{
-                    width: 80px;
-                }
-                p{
-                    font-size: 40px;
-                    color: #ffbb33;
-                    font-weight: bold;
-                }
-            }
-            h3{
-                font-weight: bolder;
-            }
-            p{
-                opacity: 0.8;
-                font-size: 14px;
-            }
-
+    .row {
+      gap: 20px;
+      .col {
+        width: 360px;
+        box-shadow: 1px 2px 25px #00000041;
+        @media only screen and (max-width: 762px) {
+          width: 80%;
         }
+        div {
+          img {
+            width: 80px;
+          }
+          p {
+            font-size: 40px;
+            color: #ffbb33;
+            font-weight: bold;
+          }
+        }
+        h3 {
+          font-weight: bolder;
+        }
+        p {
+          opacity: 0.8;
+          font-size: 14px;
+        }
+      }
     }
   }
 }

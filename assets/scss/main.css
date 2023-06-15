@@ -436,6 +436,11 @@ header .content .container .image .pics.woman {
   width: 360px;
   box-shadow: 1px 2px 25px rgba(0, 0, 0, 0.2549019608);
 }
+@media only screen and (max-width: 762px) {
+  .work-section .container .row .col {
+    width: 80%;
+  }
+}
 .work-section .container .row .col div img {
   width: 80px;
 }
@@ -788,6 +793,11 @@ header .content .container .image .pics.woman {
   justify-content: space-evenly;
   padding: 30px 0;
 }
+@media only screen and (max-width: 762px) {
+  .offers .container {
+    flex-direction: column;
+  }
+}
 .offers .container .item {
   text-align: center;
   color: #fff;
@@ -799,6 +809,65 @@ header .content .container .image .pics.woman {
 .offers .container .item p {
   font-size: 24px;
   color: #ffbb33;
+}
+
+.helps .container {
+  padding: 30px 0;
+}
+.helps .container .help-head {
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px 0;
+}
+.helps .container .help-head h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+.helps .container .help-head p {
+  width: 60%;
+  font-size: 15px;
+  opacity: 0.7;
+}
+@media only screen and (max-width: 762px) {
+  .helps .container .help-head p {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 762px) {
+  .helps .container .help-head {
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+.helps .container .row .card {
+  width: 320px;
+  padding: 15px 20px;
+  box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.2196078431);
+}
+@media only screen and (max-width: 762px) {
+  .helps .container .row .card {
+    width: 80%;
+  }
+}
+.helps .container .row .card img {
+  width: 70px;
+}
+.helps .container .row .card .job {
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+.helps .container .row .card hr {
+  color: #55204e;
+}
+.helps .container .row .card a {
+  color: #55204e;
+  transition: 0.5s;
+  letter-spacing: 1px;
+}
+.helps .container .row .card a:hover {
+  color: #ffbb33;
+  transform: scale(0.9);
 }
 
 footer {
