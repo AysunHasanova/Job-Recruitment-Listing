@@ -1,0 +1,20 @@
+.offers{
+    background-color: #55204e;
+    .container{
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 30px 0;
+        .item{
+            text-align: center;
+            color: #fff;
+            span{
+                font-size: 48px;
+                font-weight: bolder;
+            }
+            p{
+                font-size: 24px;
+                color: #ffbb33;
+            }
+        }
+    }
+}
