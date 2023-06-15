@@ -51,21 +51,6 @@ header .header .container nav .log {
 header .header .container nav .log:hover {
   color: #ffbb33;
 }
-header .header .container nav .post-job {
-  color: #fff;
-  letter-spacing: 1.3px;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: #ffbb33;
-  padding: 9px 20px;
-  border-radius: 6px;
-  transition: 0.3s ease;
-  transform: scale(1);
-}
-header .header .container nav .post-job:hover {
-  transform: scale(0.9);
-  background-color: #db9d32;
-}
 header .content {
   background-color: rgba(61, 23, 55, 0.8078431373);
 }
@@ -749,16 +734,37 @@ header .content .container .image .pics.woman {
   background-color: #ffbb33;
   margin-bottom: 10px;
 }
+.meet-team .container .meet-head {
+  width: 60%;
+  opacity: 0.7;
+  font-size: 14px;
+}
+@media only screen and (max-width: 762px) {
+  .meet-team .container .heading {
+    flex-direction: column;
+  }
+  .meet-team .container .heading .meet-head {
+    width: 100%;
+  }
+}
 .meet-team .container .row {
   -moz-column-gap: 20px;
        column-gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 .meet-team .container .row .col {
+  margin: 10px 0;
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1098039216);
   width: 270px;
   border-radius: 10px;
   box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.2039215686);
+}
+@media only screen and (max-width: 762px) {
+  .meet-team .container .row .col {
+    width: 80%;
+  }
 }
 .meet-team .container .row .col img {
   width: 250px;

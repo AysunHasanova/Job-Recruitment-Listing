@@ -44,21 +44,6 @@ header {
             color: #ffbb33;
           }
         }
-        .post-job {
-          color: #fff;
-          letter-spacing: 1.3px;
-          font-size: 18px;
-          font-weight: bold;
-          background-color: #ffbb33;
-          padding: 9px 20px;
-          border-radius: 6px;
-          transition: 0.3s ease;
-          transform: scale(1);
-          &:hover {
-            transform: scale(0.9);
-            background-color: #db9d32;
-          }
-        }
       }
     }
   }
