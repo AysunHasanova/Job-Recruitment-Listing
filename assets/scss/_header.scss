@@ -30,8 +30,8 @@ header {
                 color: #ffbb33;
               }
             }
-            .dropdown{
-              ul{
+            .dropdown {
+              ul {
                 background-color: #3d1737;
               }
             }
@@ -67,13 +67,22 @@ header {
     background-color: #3d1737ce;
     .container {
       display: flex;
+      @media only screen and (max-width: 762px) {
+        flex-direction: column;
+      }
       .text {
         padding: 100px 0;
         width: 50%;
+        @media only screen and (max-width:762px){
+         width: 100%;
+        }
         h1 {
           font-weight: bolder;
           font-size: 60px;
           color: #fff;
+          @media only screen and (max-width:762px) {
+            font-size: 36px;
+          }
           &::before {
             display: block;
             content: "";
@@ -111,24 +120,23 @@ header {
           }
         }
         .links {
-          p{
+          p {
             font-size: 14px;
-            
           }
           .icons {
             display: flex;
-           margin: 0 !important;
-           padding: 0 !important;
-           gap: 7px;
-           margin-top: 10px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            gap: 7px;
+            margin-top: 10px !important;
             a {
               font-size: 14px;
               color: #fff;
               border: 1px solid transparent;
-              padding:5px 9px;
+              padding: 5px 9px;
               background-color: #ffbb33;
               border-radius: 50%;
-              &:hover{
+              &:hover {
                 background-color: #3d1737;
                 color: #ffbb33;
               }
@@ -143,6 +151,9 @@ header {
         background-size: cover;
         padding: 0 80px 0 0;
         position: relative;
+        @media only screen and (max-width: 762px) {
+          display: none;
+        }
         img {
           width: 420px;
           position: relative;

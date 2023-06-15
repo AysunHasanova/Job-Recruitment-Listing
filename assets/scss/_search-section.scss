@@ -4,6 +4,9 @@
     justify-content: space-evenly;
     padding: 40px 0;
     color: #000;
+    @media only screen and (max-width:762px){
+      flex-direction: column-reverse;
+    }
     .num {
       font-size: 40px;
       font-weight: bold;
@@ -32,23 +35,35 @@
       background-position: center;
       background-size: cover;
       border: 10px solid white;
-      
-      select {
-        background-color: transparent;
-        color: #fff;
-        option {
-          color: #000;
+      @media only screen and (max-width:762px){
+      left: 0;
+      width: 420px;
+      }
+
+      .bg-purple{
+        background-color: #462240c2;
+        padding: 45px;
+        @media only screen and (max-width:762px){
+          padding: 34px;
+        }
+        select {
+          background-color: transparent;
+          color: #fff;
+          option {
+            color: #000;
+          }
+        }
+        a {
+          color: white;
+          border-radius: 7px;
+          padding: 10px 20px;
+          background-color: #ffbb33;
+          &:hover {
+            background-color: #db9d32;
+          }
         }
       }
-      a {
-        color: white;
-        border-radius: 7px;
-        padding: 10px 20px;
-        background-color: #ffbb33;
-        &:hover {
-          background-color: #db9d32;
-        }
-      }
+     
     }
   }
 }

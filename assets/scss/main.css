@@ -72,14 +72,29 @@ header .content {
 header .content .container {
   display: flex;
 }
+@media only screen and (max-width: 762px) {
+  header .content .container {
+    flex-direction: column;
+  }
+}
 header .content .container .text {
   padding: 100px 0;
   width: 50%;
+}
+@media only screen and (max-width: 762px) {
+  header .content .container .text {
+    width: 100%;
+  }
 }
 header .content .container .text h1 {
   font-weight: bolder;
   font-size: 60px;
   color: #fff;
+}
+@media only screen and (max-width: 762px) {
+  header .content .container .text h1 {
+    font-size: 36px;
+  }
 }
 header .content .container .text h1::before {
   display: block;
@@ -144,6 +159,11 @@ header .content .container .image {
   padding: 0 80px 0 0;
   position: relative;
 }
+@media only screen and (max-width: 762px) {
+  header .content .container .image {
+    display: none;
+  }
+}
 header .content .container .image img {
   width: 420px;
   position: relative;
@@ -194,6 +214,11 @@ header .content .container .image .pics.woman {
   padding: 40px 0;
   color: #000;
 }
+@media only screen and (max-width: 762px) {
+  .search-section .container {
+    flex-direction: column-reverse;
+  }
+}
 .search-section .container .num {
   font-size: 40px;
   font-weight: bold;
@@ -223,20 +248,35 @@ header .content .container .image .pics.woman {
   background-size: cover;
   border: 10px solid white;
 }
-.search-section .container #search select {
+@media only screen and (max-width: 762px) {
+  .search-section .container #search {
+    left: 0;
+    width: 420px;
+  }
+}
+.search-section .container #search .bg-purple {
+  background-color: rgba(70, 34, 64, 0.7607843137);
+  padding: 45px;
+}
+@media only screen and (max-width: 762px) {
+  .search-section .container #search .bg-purple {
+    padding: 34px;
+  }
+}
+.search-section .container #search .bg-purple select {
   background-color: transparent;
   color: #fff;
 }
-.search-section .container #search select option {
+.search-section .container #search .bg-purple select option {
   color: #000;
 }
-.search-section .container #search a {
+.search-section .container #search .bg-purple a {
   color: white;
   border-radius: 7px;
   padding: 10px 20px;
   background-color: #ffbb33;
 }
-.search-section .container #search a:hover {
+.search-section .container #search .bg-purple a:hover {
   background-color: #db9d32;
 }
 
@@ -315,6 +355,11 @@ header .content .container .image .pics.woman {
   background-position: center;
   background-color: rgba(0, 0, 0, 0.0666666667);
   padding: 100px 0 0 0;
+}
+@media only screen and (max-width: 762px) {
+  .job-interview .container .row {
+    flex-direction: column-reverse;
+  }
 }
 .job-interview .container .row .col h2 {
   font-size: 36px;
@@ -555,7 +600,7 @@ footer {
 footer img {
   width: 250px;
 }
-footer .col-3 h3::before {
+footer .col h3::before {
   display: block;
   content: "";
   background-color: #ffbb33;
@@ -563,32 +608,37 @@ footer .col-3 h3::before {
   width: 25%;
   margin-bottom: 20px;
 }
-footer .col-3 a {
+footer .col a {
   color: #fff;
 }
-footer .col-3 a:hover {
+footer .col a:hover {
   color: #ffbb33;
 }
-footer .col-3 .fa-arrow-right {
+footer .col .fa-arrow-right {
   color: #ffbb33;
 }
-footer .col-3 .icons {
+footer .col .icons {
   display: flex;
   padding: 0 !important;
   -moz-column-gap: 10px;
        column-gap: 10px;
 }
-footer .col-3 .icons a {
+footer .col .icons a {
   border-radius: 50%;
   background-color: #ffbb33;
   padding: 5px 7px;
 }
-footer .col-3 .icons a:hover {
+footer .col .icons a:hover {
   background-color: #3d1737;
   color: #ffbb33;
 }
 footer hr {
   color: #ffbb33;
+}
+@media only screen and (max-width: 762px) {
+  footer .under {
+    flex-direction: column;
+  }
 }
 footer .under ul li:hover {
   color: #ffbb33;

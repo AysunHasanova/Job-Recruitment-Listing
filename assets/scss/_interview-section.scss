@@ -7,6 +7,9 @@
   padding: 100px 0 0 0;
   .container {
     .row {
+      @media only screen and (max-width:762px){
+        flex-direction: column-reverse;
+      }
       .col {
         h2 {
           font-size: 36px;

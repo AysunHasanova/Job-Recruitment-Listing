@@ -5,7 +5,7 @@ footer {
   img {
     width: 250px;
   }
-  .col-3 {
+  .col {
    h3{
     &::before{
         display: block;
@@ -45,6 +45,9 @@ footer {
     color: #ffbb33;
   }
   .under {
+    @media only screen and (max-width:762px){
+      flex-direction: column;
+    }
     ul {
       li {
         &:hover{
