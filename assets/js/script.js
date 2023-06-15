@@ -1,7 +1,8 @@
 let nums = document.querySelectorAll(".num");
 let numbers = document.querySelectorAll(".number");
 let interval = 5000;
-
+let menu = document.querySelector(".fa-bars")
+let nav = document.querySelector("nav")
 nums.forEach((num) => {
   let startNum = 0;
   let endNum = parseInt(num.getAttribute("data-val"));
@@ -28,3 +29,8 @@ numbers.forEach((num) => {
     }
   }, duration);
 });
+
+menu.addEventListener("click", function () {
+  nav.classList.toggle("show");
+});
+

@@ -26,6 +26,7 @@ header .header .container .logo {
   width: 200px;
 }
 header .header .container nav {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 100px;
@@ -42,14 +43,43 @@ header .header .container nav .nav-list li a {
 header .header .container nav .nav-list li a:hover {
   color: #ffbb33;
 }
-header .header .container nav .nav-list li .dropdown ul {
-  background-color: #3d1737;
-}
 header .header .container nav .log {
   color: #fff;
 }
 header .header .container nav .log:hover {
   color: #ffbb33;
+}
+@media only screen and (max-width: 992px) {
+  header .header .container nav {
+    display: none;
+  }
+  header .header .container nav.show {
+    display: block;
+    z-index: 99;
+  }
+  header .header .container nav.show .nav-list {
+    text-align: start;
+    width: 100%;
+    background-color: #4e1f47;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    left: 0;
+  }
+  header .header .container nav.show .nav-list li {
+    padding-left: 25px;
+    padding-bottom: 10px;
+  }
+}
+header .header .container .fa-bars {
+  display: none;
+}
+@media only screen and (max-width: 762px) {
+  header .header .container .fa-bars {
+    display: block;
+    color: #fff;
+    font-size: 36px;
+  }
 }
 header .content {
   background-color: rgba(61, 23, 55, 0.8078431373);
