@@ -25,6 +25,11 @@ header .header .container {
 header .header .container .logo {
   width: 200px;
 }
+@media only screen and (max-width: 762px) {
+  header .header .container .logo {
+    width: 150px;
+  }
+}
 header .header .container nav {
   display: flex;
   align-items: center;
@@ -66,6 +71,13 @@ header .header .container nav .log:hover {
     top: 90px;
     left: 0;
   }
+}
+@media only screen and (max-width: 992px) and (max-width: 762px) {
+  header .header .container nav.show .nav-list {
+    top: 70px;
+  }
+}
+@media only screen and (max-width: 992px) {
   header .header .container nav.show .nav-list li {
     padding-left: 25px;
     padding-bottom: 10px;
@@ -74,7 +86,7 @@ header .header .container nav .log:hover {
 header .header .container .fa-bars {
   display: none;
 }
-@media only screen and (max-width: 762px) {
+@media only screen and (max-width: 992px) {
   header .header .container .fa-bars {
     display: block;
     color: #fff;
@@ -451,9 +463,9 @@ header .content .container .image .pics.woman {
   width: 360px;
   box-shadow: 1px 2px 25px rgba(0, 0, 0, 0.2549019608);
 }
-@media only screen and (max-width: 762px) {
+@media only screen and (max-width: 992px) {
   .work-section .container .row .col {
-    width: 80%;
+    width: 90%;
   }
 }
 .work-section .container .row .col div img {
@@ -945,6 +957,7 @@ header .content .container .image .pics.woman {
   align-items: center;
   justify-content: space-evenly;
   padding: 30px 0;
+  flex-wrap: wrap;
 }
 @media only screen and (max-width: 762px) {
   .offers .container {
@@ -981,12 +994,12 @@ header .content .container .image .pics.woman {
   font-size: 15px;
   opacity: 0.7;
 }
-@media only screen and (max-width: 762px) {
+@media only screen and (max-width: 992px) {
   .helps .container .help-head p {
     width: 100%;
   }
 }
-@media only screen and (max-width: 762px) {
+@media only screen and (max-width: 992px) {
   .helps .container .help-head {
     flex-direction: column;
     padding: 10px;
@@ -1000,9 +1013,9 @@ header .content .container .image .pics.woman {
   padding: 15px 20px;
   box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.2196078431);
 }
-@media only screen and (max-width: 762px) {
+@media only screen and (max-width: 992px) {
   .helps .container .row .card {
-    width: 70%;
+    width: 90%;
   }
 }
 .helps .container .row .card img {
@@ -1034,7 +1047,25 @@ footer {
 footer img {
   width: 250px;
 }
-footer .col h3::before {
+@media only screen and (max-width: 762px) {
+  footer img {
+    width: 200px;
+  }
+}
+@media only screen and (max-width: 762px) {
+  footer .row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 90px;
+  }
+}
+@media only screen and (max-width: 762px) {
+  footer .row .col {
+    padding: 10px 0;
+  }
+}
+footer .row .col h3::before {
   display: block;
   content: "";
   background-color: #ffbb33;
@@ -1042,27 +1073,27 @@ footer .col h3::before {
   width: 25%;
   margin-bottom: 20px;
 }
-footer .col a {
+footer .row .col a {
   color: #fff;
 }
-footer .col a:hover {
+footer .row .col a:hover {
   color: #ffbb33;
 }
-footer .col .fa-arrow-right {
+footer .row .col .fa-arrow-right {
   color: #ffbb33;
 }
-footer .col .icons {
+footer .row .col .icons {
   display: flex;
   padding: 0 !important;
   -moz-column-gap: 10px;
        column-gap: 10px;
 }
-footer .col .icons a {
+footer .row .col .icons a {
   border-radius: 50%;
   background-color: #ffbb33;
   padding: 5px 7px;
 }
-footer .col .icons a:hover {
+footer .row .col .icons a:hover {
   background-color: #3d1737;
   color: #ffbb33;
 }
