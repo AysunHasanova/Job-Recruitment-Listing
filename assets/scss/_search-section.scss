@@ -4,7 +4,7 @@
     justify-content: space-evenly;
     padding: 40px 0;
     color: #000;
-    @media only screen and (max-width:762px){
+    @media only screen and (max-width:992px){
       flex-direction: column-reverse;
     }
     .num {
@@ -35,9 +35,9 @@
       background-position: center;
       background-size: cover;
       border: 10px solid white;
-      @media only screen and (max-width:762px){
+      @media only screen and (max-width:992px){
       left: 0;
-      width: 420px;
+      width: 90%;
       }
 
       .bg-purple{

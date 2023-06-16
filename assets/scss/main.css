@@ -99,7 +99,7 @@ header .content {
 header .content .container {
   display: flex;
 }
-@media only screen and (max-width: 762px) {
+@media only screen and (max-width: 992px) {
   header .content .container {
     flex-direction: column;
   }
@@ -108,7 +108,7 @@ header .content .container .text {
   padding: 100px 0;
   width: 50%;
 }
-@media only screen and (max-width: 762px) {
+@media only screen and (max-width: 992px) {
   header .content .container .text {
     width: 100%;
   }
@@ -186,7 +186,7 @@ header .content .container .image {
   padding: 0 80px 0 0;
   position: relative;
 }
-@media only screen and (max-width: 762px) {
+@media only screen and (max-width: 992px) {
   header .content .container .image {
     display: none;
   }
@@ -241,7 +241,7 @@ header .content .container .image .pics.woman {
   padding: 40px 0;
   color: #000;
 }
-@media only screen and (max-width: 762px) {
+@media only screen and (max-width: 992px) {
   .search-section .container {
     flex-direction: column-reverse;
   }
@@ -275,10 +275,10 @@ header .content .container .image .pics.woman {
   background-size: cover;
   border: 10px solid white;
 }
-@media only screen and (max-width: 762px) {
+@media only screen and (max-width: 992px) {
   .search-section .container #search {
     left: 0;
-    width: 420px;
+    width: 90%;
   }
 }
 .search-section .container #search .bg-purple {
@@ -328,6 +328,11 @@ header .content .container .image .pics.woman {
 .job-list .container .row .col {
   width: 300px;
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.368627451);
+}
+@media only screen and (max-width: 992px) {
+  .job-list .container .row .col {
+    width: 90%;
+  }
 }
 .job-list .container .row .col p {
   opacity: 0.6;
@@ -381,11 +386,16 @@ header .content .container .image .pics.woman {
   background-size: cover;
   background-position: center;
   background-color: rgba(0, 0, 0, 0.0666666667);
-  padding: 100px 0 0 0;
+  padding: 80px 0 20px 0;
 }
-@media only screen and (max-width: 762px) {
+@media only screen and (max-width: 992px) {
   .job-interview .container .row {
     flex-direction: column-reverse;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .job-interview .container .row .col {
+    width: 100%;
   }
 }
 .job-interview .container .row .col h2 {
@@ -421,8 +431,13 @@ header .content .container .image .pics.woman {
   width: 500px;
   border-radius: 10px;
 }
+@media only screen and (max-width: 992px) {
+  .job-interview .container .row .col img {
+    width: 100%;
+  }
+}
 .job-interview .container .row .col .year {
-  width: 40%;
+  width: 35%;
   padding: 15px 18px;
   background-color: #fff;
   font-size: 30px;
@@ -431,6 +446,19 @@ header .content .container .image .pics.woman {
   position: relative;
   bottom: 130px;
   left: 270px;
+}
+@media only screen and (max-width: 992px) {
+  .job-interview .container .row .col .year {
+    width: 50%;
+    left: 160px;
+    bottom: 40px;
+  }
+}
+@media only screen and (max-width: 992px) and (max-width: 762px) {
+  .job-interview .container .row .col .year {
+    bottom: 40px;
+    left: 100px;
+  }
 }
 .job-interview .container .row .col .year .plus {
   color: #ffbb33;
@@ -816,7 +844,7 @@ header .content .container .image .pics.woman {
   box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.3647058824);
   margin-bottom: 10px;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 762px) {
   .blog-section .container .content .blog-content .blog-item {
     flex-direction: column;
   }

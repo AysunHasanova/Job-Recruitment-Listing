@@ -4,13 +4,16 @@
   background-size: cover;
   background-position: center;
   background-color: #00000011;
-  padding: 100px 0 0 0;
+  padding: 80px 0 20px 0;
   .container {
     .row {
-      @media only screen and (max-width:762px){
+      @media only screen and (max-width:992px){
         flex-direction: column-reverse;
       }
       .col {
+        @media only screen and (max-width:992px){
+          width: 100%;
+        }
         h2 {
           font-size: 36px;
           font-weight: bold;
@@ -44,9 +47,12 @@
         img {
           width: 500px;
           border-radius: 10px;
+          @media only screen and (max-width:992px){
+            width: 100%;
+          }
         }
         .year {
-          width: 40%;
+          width: 35%;
           padding: 15px 18px;
           background-color: #fff;
           font-size: 30px;
@@ -55,6 +61,15 @@
           position: relative;
           bottom: 130px;
           left: 270px;
+          @media only screen and (max-width:992px){
+            width: 50%;
+            left: 160px;
+            bottom: 40px;
+            @media only screen and (max-width:762px){
+              bottom: 40px;
+              left: 100px;
+            }
+          }
           .plus {
             color: #ffbb33;
             position: relative;
