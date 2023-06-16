@@ -265,7 +265,7 @@ header .content .container .image .pics.woman {
 .search-section .container #search {
   position: relative;
   bottom: 80px;
-  left: 80px;
+  left: 70px;
   border-radius: 10px;
   width: 550px;
   height: 350px;
@@ -608,11 +608,21 @@ header .content .container .image .pics.woman {
 .get-in-touch {
   padding: 70px 0;
 }
+@media only screen and (max-width: 992px) {
+  .get-in-touch .container .row {
+    flex-direction: column-reverse;
+  }
+}
 .get-in-touch .container .row input {
   padding: 5px 7px;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.4509803922);
   margin: 7px 5px;
+}
+@media only screen and (max-width: 992px) {
+  .get-in-touch .container .row input {
+    width: 350px;
+  }
 }
 .get-in-touch .container .row input:hover {
   border-color: #ffbb33;
@@ -622,9 +632,16 @@ header .content .container .image .pics.woman {
   border-radius: 10px;
   margin-left: 5px;
   margin-top: 7px;
+  width: 450px;
+  height: 150px;
 }
 .get-in-touch .container .row textarea:hover {
   border-color: #ffbb33;
+}
+@media only screen and (max-width: 992px) {
+  .get-in-touch .container .row textarea {
+    width: 350px;
+  }
 }
 .get-in-touch .container .row button {
   display: block;
@@ -639,6 +656,11 @@ header .content .container .image .pics.woman {
 .get-in-touch .container .row button:hover {
   transform: scale(0.9);
   background-color: #ca952a;
+}
+@media only screen and (max-width: 992px) {
+  .get-in-touch .container .row .col-6 {
+    width: 100%;
+  }
 }
 .get-in-touch .container .row .col-6 .fa-check {
   color: #ffbb33;
@@ -874,6 +896,11 @@ header .content .container .image .pics.woman {
   color: #ffbb33;
 }
 
+@media only screen and (max-width: 992px) {
+  .vision-section .row {
+    flex-direction: column;
+  }
+}
 .vision-section .row .col-6 {
   background-image: url(/images/smiling-interracial-business-people.jpg);
   background-repeat: no-repeat;
@@ -881,6 +908,11 @@ header .content .container .image .pics.woman {
   background-size: cover;
   padding: 0 !important;
   color: #fff;
+}
+@media only screen and (max-width: 992px) {
+  .vision-section .row .col-6 {
+    width: 100%;
+  }
 }
 .vision-section .row .col-6 h1::before {
   margin-bottom: 30px;
