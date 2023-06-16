@@ -717,6 +717,89 @@ header .content .container .image .pics.woman {
   }
 }
 
+.blog-section .container {
+  padding: 20px 0;
+}
+.blog-section .container .head {
+  padding: 40px 0;
+}
+.blog-section .container .head h1 {
+  font-weight: bold;
+}
+.blog-section .container .head h1::before {
+  display: block;
+  content: "";
+  background-color: #ffbb33;
+  height: 2px;
+  width: 120px;
+  margin-bottom: 15px;
+}
+.blog-section .container .head p {
+  width: 50%;
+  opacity: 0.7;
+  font-size: 14px;
+}
+.blog-section .container .content {
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.blog-section .container .content .blog {
+  padding: 20px;
+  width: 500px;
+  box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.3647058824);
+}
+.blog-section .container .content .blog .image {
+  overflow: hidden;
+  height: 253px;
+}
+.blog-section .container .content .blog .image img {
+  width: 450px;
+  transition: 0.6s;
+}
+.blog-section .container .content .blog .image img:hover {
+  transform: scale(1.2);
+}
+.blog-section .container .content .blog h3 {
+  color: #000;
+  font-weight: bold;
+}
+.blog-section .container .content .blog h3:hover {
+  color: #7a2c70;
+}
+.blog-section .container .content .blog .fa-solid {
+  color: #ffbb33;
+}
+.blog-section .container .content .blog-content .blog-item {
+  padding: 7px;
+  flex-direction: row;
+  box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.3647058824);
+  margin-bottom: 10px;
+}
+.blog-section .container .content .blog-content .blog-item .small-image {
+  overflow: hidden;
+  height: 150px;
+  margin-right: 10px;
+}
+.blog-section .container .content .blog-content .blog-item .small-image img {
+  width: 200px;
+  height: 150px;
+  transition: 0.6s;
+}
+.blog-section .container .content .blog-content .blog-item .small-image img:hover {
+  transform: scale(1.2);
+}
+.blog-section .container .content .blog-content .blog-item h3 {
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+}
+.blog-section .container .content .blog-content .blog-item h3:hover {
+  color: #7a2c70;
+}
+.blog-section .container .content .blog-content .blog-item .fa-solid {
+  color: #ffbb33;
+}
+
 .vision-section .row .col-6 {
   background-image: url(/images/smiling-interracial-business-people.jpg);
   background-repeat: no-repeat;
