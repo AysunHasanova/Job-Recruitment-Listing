@@ -3,6 +3,12 @@
     padding: 20px 0;
     .head {
       padding: 40px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      @media only screen and (max-width:992px){
+        flex-direction: column;
+      }
       h1 {
         font-weight: bold;
         &::before {
@@ -18,15 +24,24 @@
         width: 50%;
         opacity: 0.7;
         font-size: 14px;
+        @media only screen and (max-width:992px){
+          width: 80%;
+        }
       }
     }
     .content {
       column-gap: 10px;
+      display: flex;
+      @media only screen and (max-width:992px){
+        flex-direction: column;
+      }
       .blog {
         padding: 20px;
         width: 500px;
         box-shadow: 1px 2px 20px #0000005d;
-
+        @media only screen and (max-width:992px){
+          width: 100%;
+        }
         .image {
           overflow: hidden;
           height: 253px;
@@ -51,11 +66,17 @@
         }
       }
       .blog-content {
+        @media only screen and (max-width:992px){
+          margin-top: 10px;
+        }
         .blog-item {
           padding: 7px;
           flex-direction: row;
           box-shadow: 1px 2px 20px #0000005d;
           margin-bottom: 10px;
+          @media only screen and (max-width:992px){
+            flex-direction: column;
+          }
           .small-image {
             overflow: hidden;
             height: 150px;

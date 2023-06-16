@@ -722,6 +722,14 @@ header .content .container .image .pics.woman {
 }
 .blog-section .container .head {
   padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+@media only screen and (max-width: 992px) {
+  .blog-section .container .head {
+    flex-direction: column;
+  }
 }
 .blog-section .container .head h1 {
   font-weight: bold;
@@ -739,14 +747,30 @@ header .content .container .image .pics.woman {
   opacity: 0.7;
   font-size: 14px;
 }
+@media only screen and (max-width: 992px) {
+  .blog-section .container .head p {
+    width: 80%;
+  }
+}
 .blog-section .container .content {
   -moz-column-gap: 10px;
        column-gap: 10px;
+  display: flex;
+}
+@media only screen and (max-width: 992px) {
+  .blog-section .container .content {
+    flex-direction: column;
+  }
 }
 .blog-section .container .content .blog {
   padding: 20px;
   width: 500px;
   box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.3647058824);
+}
+@media only screen and (max-width: 992px) {
+  .blog-section .container .content .blog {
+    width: 100%;
+  }
 }
 .blog-section .container .content .blog .image {
   overflow: hidden;
@@ -769,11 +793,21 @@ header .content .container .image .pics.woman {
 .blog-section .container .content .blog .fa-solid {
   color: #ffbb33;
 }
+@media only screen and (max-width: 992px) {
+  .blog-section .container .content .blog-content {
+    margin-top: 10px;
+  }
+}
 .blog-section .container .content .blog-content .blog-item {
   padding: 7px;
   flex-direction: row;
   box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.3647058824);
   margin-bottom: 10px;
+}
+@media only screen and (max-width: 992px) {
+  .blog-section .container .content .blog-content .blog-item {
+    flex-direction: column;
+  }
 }
 .blog-section .container .content .blog-content .blog-item .small-image {
   overflow: hidden;
