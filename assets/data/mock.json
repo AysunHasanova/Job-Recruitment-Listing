@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Aysusnn",
+      "email": "aysuneh@hmemm",
+      "password": "sdkedkwedk"
+    },
+    {
+      "username": "Autem delectus quis",
+      "email": "berywumer@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "id": 2
+    },
+    {
+      "username": "Aut fugiat velit b",
+      "email": "fafyfubype@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "id": 3
+    },
+    {
+      "username": "Reprehenderit delect",
+      "email": "sisop@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "id": 4
+    }
+  ]
+}

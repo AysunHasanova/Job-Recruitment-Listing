@@ -49,7 +49,9 @@ header .header .container nav .nav-list li a:hover {
   color: #ffbb33;
 }
 header .header .container nav .log {
-  color: #fff;
+  color: white;
+  border: none;
+  background-color: #3d1737;
 }
 header .header .container nav .log:hover {
   color: #ffbb33;
@@ -94,7 +96,128 @@ header .header .container .fa-bars {
   }
 }
 header .content {
+  position: relative;
   background-color: rgba(61, 23, 55, 0.8078431373);
+}
+header .content.show .form_container {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+header .content .form_container {
+  position: fixed;
+  max-width: 320px;
+  width: 100%;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 101;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
+}
+header .content .form_container .button {
+  background: #7d2ae8;
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+header .content .form_container a {
+  color: #7d2ae8;
+  font-size: 12px;
+}
+header .content .form_container a:hover {
+  text-decoration: underline;
+}
+header .content .form_container .checkbox {
+  display: flex;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  white-space: nowrap;
+}
+header .content .form_container .checkbox input {
+  accent-color: #7d2ae8;
+}
+header .content .form_container .checkbox label {
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: #0b0217;
+}
+header .content .form_container .login_signup {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
+header .content .form_container h2 {
+  font-size: 22px;
+  color: #0b0217;
+  text-align: center;
+}
+header .content .form_container .form_close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #0b0217;
+  font-size: 22px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+header .content .form_container .input_box {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 40px;
+}
+header .content .form_container .input_box i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #707070;
+}
+header .content .form_container .input_box i.email, header .content .form_container .input_box i.password, header .content .form_container .input_box i.user {
+  left: 0;
+}
+header .content .form_container .input_box i.pw_hide {
+  right: 0;
+  font-size: 18px;
+  cursor: pointer;
+}
+header .content .form_container .input_box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 30px;
+  color: #333;
+  transition: all 0.2s ease;
+  border-bottom: 1.5px solid #aaaaaa;
+}
+header .content .form_container .input_box input:focus {
+  border-color: #7d2ae8;
+}
+header .content .form_container .option_field {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .content .form_container .signup_form {
+  display: none;
+}
+header .content .form_container.active .signup_form {
+  display: block;
+}
+header .content .form_container.active .login_form {
+  display: none;
 }
 header .content .container {
   display: flex;
@@ -638,7 +761,7 @@ header .content .container .image .pics.woman {
 .get-in-touch .container .row textarea:hover {
   border-color: #ffbb33;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 762px) {
   .get-in-touch .container .row textarea {
     width: 350px;
   }
@@ -656,6 +779,9 @@ header .content .container .image .pics.woman {
 .get-in-touch .container .row button:hover {
   transform: scale(0.9);
   background-color: #ca952a;
+}
+.get-in-touch .container .row .col-6 {
+  width: 50%;
 }
 @media only screen and (max-width: 992px) {
   .get-in-touch .container .row .col-6 {

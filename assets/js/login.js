@@ -5,14 +5,6 @@ let inputPassword = document.querySelector("#exampleInputPassword1");
 let id = new URLSearchParams(window.location.search).get("id");
 let allUsers = JSON.parse(localStorage.getItem("usersData"));
 
-if (id) {
-  for (let i = 0; i < allUsers.length; i++) {
-    if (id == allUsers[i].id) {
-      (inputEmail.value = allUsers[i].email),
-        (inputPassword.value = allUsers[i].password);
-    }
-  }
-}
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 

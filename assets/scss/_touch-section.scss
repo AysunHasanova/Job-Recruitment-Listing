@@ -27,7 +27,7 @@
         &:hover {
           border-color: #ffbb33;
         }
-        @media only screen and (max-width:992px){
+        @media only screen and (max-width:762px){
           width: 350px;
         }
       }
@@ -46,6 +46,7 @@
         }
       }
       .col-6 {
+        width: 50%;
         @media only screen and (max-width: 992px) {
           width: 100%;
         }
