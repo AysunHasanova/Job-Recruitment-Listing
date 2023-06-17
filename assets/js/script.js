@@ -61,48 +61,41 @@ loginBtn.addEventListener("click", (e) => {
   formContainer.classList.remove("active");
 });
 
-// signForm.addEventListener("submit", async function (e) {
-//   e.preventDefault();
-//   let userObj = {
-//     username: username.value,
-//     email: signEmail.value,
-//     password: signPassword.value,
-//   };
-//   await axios.post(Mock_API, userObj);
-// });
-
 async function api() {
   let res = await axios(Mock_API);
   let data = res.data;
   signForm.addEventListener("submit", async function (e) {
     e.preventDefault();
- if(signEmail.value==="" && signPassword.value==="" && username.value===""){
-  setError(signEmail,"Email is required")
-  setError(username,"Username is required")
-  setError(signPassword,"Password is required")
- }
- else{
-  let userObj = {
-    username: username.value,
-    email: signEmail.value,
-    password: signPassword.value,
-  };
-  let found = false;
-  for (let i = 0; i < data.length; i++) {
-    if (userObj.username === data[i].username) {
-      found = true;
-      break;
-    }
-  }
+    if (
+      signEmail.value === "" &&
+      signPassword.value === "" &&
+      username.value === ""
+    ) {
+      setError(signEmail, "Email is required");
+      setError(username, "Username is required");
+      setError(signPassword, "Password is required");
+    } else {
+      let userObj = {
+        username: username.value,
+        email: signEmail.value,
+        password: signPassword.value,
+      };
+      let found = false;
+      for (let i = 0; i < data.length; i++) {
+        if (userObj.username === data[i].username) {
+          found = true;
+          break;
+        }
+      }
 
-  if (found) {
-    setError(username,"User is already")
-    setError(signEmail,"")
-    setError(signPassword,"")
-  } else {
-    await axios.post(Mock_API, userObj);
-  }
- }
+      if (found) {
+        setError(username, "User is already");
+        setError(signEmail, "");
+        setError(signPassword, "");
+      } else {
+        await axios.post(Mock_API, userObj);
+      }
+    }
   });
   loginForm.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -148,4 +141,55 @@ const setSuccess = (element) => {
   inputControl.classList.remove("error");
 };
 
+let Job_API = "http://localhost:3000/jobs";
+let rowJob = document.querySelector("#job-row");
 
+function drawCard(arr) {
+  rowJob.innerHTML = "";
+  arr.forEach((element) => {
+    rowJob.innerHTML += `
+    <div class="col col-4 card py-3 px-4">
+            <div class="d-flex align-items-center justify-content-around">
+              <img src=${element.image} alt="" />
+              <div>
+                <p class="city">${element.country}, ${element.city}</p>
+                <p class="marka">${element.company}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="d-flex align-items-center justify-content-between">
+              <p><i class="fa-solid fa-clock-rotate-left"></i> Remote</p>
+              <p><i class="fa-solid fa-clock-rotate-left"></i> Remote</p>
+            </div>
+            <p class="pb-3">
+              <i class="fa-solid fa-clock-rotate-left"></i> Remote
+            </p>
+            <h5>${element.nameJob}</h5>
+            <p class="text-start">
+              ${element.aboutJob}
+            </p>
+            <div class="text-start">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star-half-stroke"></i>
+            </div>
+            <div class="text-start">
+              <i class="fa-solid fa-dollar-sign"></i> <span>$${element.firstprice}k-$${element.lastprice}k</span>
+            </div>
+            <div class="text-start my-4">
+              <a href="" class="add">+</a>
+              <button class="detail">JOB DETAIL</button>
+            </div>
+          </div>
+    `;
+  });
+}
+
+async function cards(){
+  let res = await axios(Job_API)
+  let data = res.data
+  drawCard(data)
+}
+cards()

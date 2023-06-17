@@ -72,5 +72,51 @@
       "password": "sxsdwdwe",
       "id": 12
     }
+  ],
+  "jobs": [
+    {
+      "id": 1,
+      "image":"/images/c-letter-logo.png",
+      "nameJob": "Web developer",
+      "aboutJob":"sdfmweifjwefjqwefkjqefjerf asdjndfjeqf sdcsdcsdc sdfqfqef sdf dfqef qef",
+      "company": "Criativo Studios",
+      "city": "Indonesia",
+      "country": "Pekanbaru",
+      "firstprice": "15",
+      "lastprice": "35"
+    },
+    {
+      "id": 2,
+      "image":"/images/c-letter-logo.png",
+      "nameJob": "Web developer",
+      "aboutJob":"sdfmweifjwefjqwefkjqefjerf asdjndfjeqf sdcsdcsdc sdfqfqef sdf dfqef qef",
+      "company": "Criativo Studios",
+      "city": "Indonesia",
+      "country": "Pekanbaru",
+      "firstprice": "15",
+      "lastprice": "35"
+    },
+    {
+      "id": 3,
+      "image":"/images/c-letter-logo.png",
+      "nameJob": "Web developer",
+      "aboutJob":"sdfmweifjwefjqwefkjqefjerf asdjndfjeqf sdcsdcsdc sdfqfqef sdf dfqef qef",
+      "company": "Criativo Studios",
+      "city": "Indonesia",
+      "country": "Pekanbaru",
+      "firstprice": "15",
+      "lastprice": "35"
+    },
+    {
+      "id": 4,
+      "image":"/images/c-letter-logo.png",
+      "nameJob": "Web developer",
+      "aboutJob":"sdfmweifjwefjqwefkjqefjerf asdjndfjeqf sdcsdcsdc sdfqfqef sdf dfqef qef",
+      "company": "Criativo Studios",
+      "city": "Indonesia",
+      "country": "Pekanbaru",
+      "firstprice": "15",
+      "lastprice": "35"
+    }
   ]
 }
