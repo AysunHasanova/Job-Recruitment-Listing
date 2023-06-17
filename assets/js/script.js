@@ -76,43 +76,76 @@ async function api() {
   let data = res.data;
   signForm.addEventListener("submit", async function (e) {
     e.preventDefault();
-    let userObj = {
-      username: username.value,
-      email: signEmail.value,
-      password: signPassword.value,
-    };
-    let found = false;
-    for (let i = 0; i < data.length; i++) {
-      if (userObj.username === data[i].username) {
-        found = true;
-        break;
-      }
+ if(signEmail.value==="" && signPassword.value==="" && username.value===""){
+  setError(signEmail,"Email is required")
+  setError(username,"Username is required")
+  setError(signPassword,"Password is required")
+ }
+ else{
+  let userObj = {
+    username: username.value,
+    email: signEmail.value,
+    password: signPassword.value,
+  };
+  let found = false;
+  for (let i = 0; i < data.length; i++) {
+    if (userObj.username === data[i].username) {
+      found = true;
+      break;
     }
+  }
 
-    if (found) {
-      alert("User is already");
-    } else {
-      await axios.post(Mock_API, userObj);
-      alert("Account created")
-      
-    }
+  if (found) {
+    setError(username,"User is already")
+    setError(signEmail,"")
+    setError(signPassword,"")
+  } else {
+    await axios.post(Mock_API, userObj);
+  }
+ }
   });
   loginForm.addEventListener("submit", async function (e) {
     e.preventDefault();
-    if (loginEmail && loginPassword) {
+    if (loginEmail.value === "" && loginPassword.value === "") {
+      setError(loginEmail, "Email is required");
+      setError(loginPassword, "Password is required");
+    } else {
       let userEmail = data.find((item) => item.email === loginEmail.value);
       let userPassword = data.find(
         (item) => item.password === loginPassword.value
       );
-
+      console.log(userEmail);
       if (userEmail && userPassword) {
         window.location = "index.html";
-      } else if (!userPassword && userEmail) {
-        alert("Password is wrong!");
+      }
+      if (userEmail && !userPassword) {
+        setSuccess(loginEmail);
+        setError(loginPassword, "Password is wrong");
       } else {
-        alert("No user found, you need sign up");
+        setError(loginEmail, "User not found");
+        setError(loginPassword, "");
       }
     }
   });
 }
 api();
+
+const setError = (element, message) => {
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.querySelector(".error");
+
+  errorDisplay.innerText = message;
+  inputControl.classList.add("error");
+  inputControl.classList.remove("success");
+};
+
+const setSuccess = (element) => {
+  const inputControl = element.parentElement;
+  const errorDisplay = inputControl.querySelector(".error");
+
+  errorDisplay.innerText = "";
+  inputControl.classList.add("success");
+  inputControl.classList.remove("error");
+};
+
+

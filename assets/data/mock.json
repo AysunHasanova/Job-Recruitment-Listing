@@ -53,6 +53,24 @@
       "email": "bivin@mailinator.com",
       "password": "Pa$$w0rd!",
       "id": 9
+    },
+    {
+      "username": "Qui ut quia impedit",
+      "email": "cafavalusu@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "id": 10
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "id": 11
+    },
+    {
+      "username": "aysun",
+      "email": "aysunhsnva@gmail.com",
+      "password": "sxsdwdwe",
+      "id": 12
     }
   ]
 }
