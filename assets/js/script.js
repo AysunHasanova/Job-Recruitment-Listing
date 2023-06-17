@@ -1,8 +1,24 @@
 let nums = document.querySelectorAll(".num");
 let numbers = document.querySelectorAll(".number");
 let interval = 5000;
+let intervalNum = 8000;
 let menu = document.querySelector(".fa-bars");
 let nav = document.querySelector("nav");
+let Mock_API = "http://localhost:3000/users";
+let loginEmail = document.querySelector(".login-email");
+let loginPassword = document.querySelector(".login-password");
+let username = document.querySelector(".username");
+let signEmail = document.querySelector(".sign-email");
+let signPassword = document.querySelector(".sign-password");
+let loginForm = document.querySelector(".login");
+let signForm = document.querySelector(".sign");
+const formOpenBtn = document.querySelector("#form-open"),
+  home = document.querySelector(".content");
+formContainer = document.querySelector(".form_container");
+formCloseBtn = document.querySelector(".form_close");
+signupBtn = document.querySelector("#signup");
+loginBtn = document.querySelector("#login");
+
 nums.forEach((num) => {
   let startNum = 0;
   let endNum = parseInt(num.getAttribute("data-val"));
@@ -16,7 +32,6 @@ nums.forEach((num) => {
   }, duration);
 });
 
-let intervalNum = 8000;
 numbers.forEach((num) => {
   let startNum = 0;
   let endNum = parseInt(num.getAttribute("data-val"));
@@ -34,20 +49,6 @@ menu.addEventListener("click", function () {
   nav.classList.toggle("show");
 });
 
-let Mock_API = "http://localhost:3000/users";
-let loginEmail = document.querySelector(".login-email");
-let loginPassword = document.querySelector(".login-password");
-let username = document.querySelector(".username");
-let signEmail = document.querySelector(".sign-email");
-let signPassword = document.querySelector(".sign-password");
-let loginForm = document.querySelector(".login");
-let signForm = document.querySelector(".sign");
-const formOpenBtn = document.querySelector("#form-open"),
-  home = document.querySelector(".content");
-formContainer = document.querySelector(".form_container");
-formCloseBtn = document.querySelector(".form_close");
-signupBtn = document.querySelector("#signup");
-loginBtn = document.querySelector("#login");
 formOpenBtn.addEventListener("click", () => home.classList.add("show"));
 formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
 
@@ -60,13 +61,58 @@ loginBtn.addEventListener("click", (e) => {
   formContainer.classList.remove("active");
 });
 
-signForm.addEventListener("submit", async function (e) {
-  e.preventDefault();
-  let userObj = {
-    username: username.value,
-    email: signEmail.value,
-    password: signPassword.value,
-  };
-  await axios.post(Mock_API, userObj);
-});
+// signForm.addEventListener("submit", async function (e) {
+//   e.preventDefault();
+//   let userObj = {
+//     username: username.value,
+//     email: signEmail.value,
+//     password: signPassword.value,
+//   };
+//   await axios.post(Mock_API, userObj);
+// });
 
+async function api() {
+  let res = await axios(Mock_API);
+  let data = res.data;
+  signForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    let userObj = {
+      username: username.value,
+      email: signEmail.value,
+      password: signPassword.value,
+    };
+    let found = false;
+    for (let i = 0; i < data.length; i++) {
+      if (userObj.username === data[i].username) {
+        found = true;
+        break;
+      }
+    }
+
+    if (found) {
+      alert("User is already");
+    } else {
+      await axios.post(Mock_API, userObj);
+      alert("Account created")
+      
+    }
+  });
+  loginForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    if (loginEmail && loginPassword) {
+      let userEmail = data.find((item) => item.email === loginEmail.value);
+      let userPassword = data.find(
+        (item) => item.password === loginPassword.value
+      );
+
+      if (userEmail && userPassword) {
+        window.location = "index.html";
+      } else if (!userPassword && userEmail) {
+        alert("Password is wrong!");
+      } else {
+        alert("No user found, you need sign up");
+      }
+    }
+  });
+}
+api();
