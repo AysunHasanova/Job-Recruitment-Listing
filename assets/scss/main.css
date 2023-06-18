@@ -29,6 +29,12 @@ body.dark .interview-text {
 body.dark h3 {
   color: #fff;
 }
+body.dark .login_signup {
+  color: #000;
+}
+body.dark .information-section .col {
+  color: #000;
+}
 body header {
   background-image: url(/images/bg-image.jpg);
   background-position: center;
