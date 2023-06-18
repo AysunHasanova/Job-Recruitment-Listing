@@ -52,7 +52,6 @@ menu.addEventListener("click", function () {
     : (this.classList = "fa-solid fa-bars");
 });
 
-
 let body = document.querySelector("body");
 let modeToggle = body.querySelector(".mode-toggle");
 let getMode = localStorage.getItem("mode");
@@ -85,19 +84,12 @@ async function api() {
   let data = res.data;
   signForm.addEventListener("submit", async function (e) {
     e.preventDefault();
-    if (
-      signEmail.value === "" &&
-      signPassword.value === "" &&
-      username.value === ""
-    ) {
-      setError(signEmail, "Email is required");
-      setError(username, "Username is required");
-      setError(signPassword, "Password is required");
-    } else {
+    if (signEmail.value && signPassword.value && username.value) {
       let userObj = {
         username: username.value,
         email: signEmail.value,
         password: signPassword.value,
+        isAdmin: "false",
       };
       let found = false;
       for (let i = 0; i < data.length; i++) {
@@ -114,31 +106,77 @@ async function api() {
       } else {
         await axios.post(Mock_API, userObj);
       }
-    }
-  });
-  loginForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    if (loginEmail.value === "" && loginPassword.value === "") {
-      setError(loginEmail, "Email is required");
-      setError(loginPassword, "Password is required");
     } else {
-      let userEmail = data.find((item) => item.email === loginEmail.value);
-      let userPassword = data.find(
-        (item) => item.password === loginPassword.value
-      );
-      console.log(userEmail);
-      if (userEmail && userPassword) {
-        window.location = "index.html";
-      }
-      if (userEmail && !userPassword) {
-        setSuccess(loginEmail);
-        setError(loginPassword, "Password is wrong");
-      } else {
-        setError(loginEmail, "User not found");
-        setError(loginPassword, "");
-      }
+      setError(signEmail, "Email is required");
+      setError(username, "Username is required");
+      setError(signPassword, "Password is required");
     }
   });
+
+  data.forEach((element) => {
+    // console.log(element);
+    loginForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      // console.log(element.isAdmin);
+      if (loginEmail.value && loginPassword.value) {
+        if (
+          element.email === loginEmail.value &&
+          element.password === loginPassword.value &&
+          element.isAdmin === "false"
+        ) {
+          console.log("isAdmin false");
+          window.location = "index.html";
+        }
+        if (
+          element.email === loginEmail.value &&
+          element.password === loginPassword.value &&
+          element.isAdmin === "true"
+        ) {
+          console.log("isAdmin true");
+          window.location = "/admin/admin.html";
+        }
+        if (
+          element.email === loginEmail.value &&
+          element.password !== loginPassword.value
+        ) {
+          setSuccess(loginEmail);
+          setError(loginPassword, "Password is wrong");
+        } else {
+          setError(loginEmail, "User not found");
+          setError(loginPassword, "");
+        }
+      } else {
+        setError(loginEmail, "Email is required");
+        setError(loginPassword, "Password is required");
+      }
+    });
+  });
+
+  // loginForm.addEventListener("submit", async function (e) {
+  //   e.preventDefault();
+  //   if (loginEmail.value && loginPassword.value) {
+  //     let userEmail = data.find((item) => item.email === loginEmail.value);
+  //     let userPassword = data.find(
+  //       (item) => item.password === loginPassword.value
+  //     );
+  //     // console.log(userEmail);
+  //     if (userEmail && userPassword) {
+  //       window.location = "/admin/admin.html";
+  //       setSuccess(loginEmail);
+  //       setSuccess(loginPassword);
+  //     }
+  //     if (userEmail && !userPassword) {
+  //       setSuccess(loginEmail);
+  //       setError(loginPassword, "Password is wrong");
+  //     } else {
+  //       setError(loginEmail, "User not found");
+  //       setError(loginPassword, "");
+  //     }
+  //   } else {
+  //     setError(loginEmail, "Email is required");
+  //     setError(loginPassword, "Password is required");
+  //   }
+  // });
 }
 api();
 

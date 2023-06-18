@@ -4,79 +4,50 @@
       "id": 1,
       "username": "Aysusnn",
       "email": "aysuneh@hmemm",
-      "password": "sdkedkwedk"
+      "password": "sdkedkwedk",
+      "isAdmin":"false"
     },
     {
       "username": "Autem delectus quis",
       "email": "berywumer@mailinator.com",
       "password": "Pa$$w0rd!",
+      "isAdmin":"false",
       "id": 2
     },
     {
       "username": "Aut fugiat velit b",
       "email": "fafyfubype@mailinator.com",
       "password": "Pa$$w0rd!",
+      "isAdmin":"false",
       "id": 3
     },
     {
       "username": "Reprehenderit delect",
       "email": "sisop@mailinator.com",
       "password": "Pa$$w0rd!",
+      "isAdmin":"false",
       "id": 4
     },
     {
       "username": "Qui adipisicing quas",
       "email": "tile@mailinator.com",
       "password": "Pa$$w0rd!",
+      "isAdmin":"false",
       "id": 5
     },
     {
       "username": "Et alias eiusmod ten",
       "email": "nuxiq@mailinator.com",
       "password": "Pa$$w0rd!",
+      "isAdmin":"false",
       "id": 6
     },
     {
-      "username": "Aysusnnzxsx",
+      "username": "Aysun",
       "email": "aysunhsnva@gmail.com",
-      "password": "wekqnwekq",
+      "password": "2003aysun",
+      "isAdmin":"true",
       "id": 7
-    },
-    {
-      "username": "Similique velit magn",
-      "email": "qiryromyw@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "id": 8
-    },
-    {
-      "username": "Soluta culpa ut inc",
-      "email": "bivin@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "id": 9
-    },
-    {
-      "username": "Qui ut quia impedit",
-      "email": "cafavalusu@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "id": 10
-    },
-    {
-      "username": "",
-      "email": "",
-      "password": "",
-      "id": 11
-    },
-    {
-      "username": "aysun",
-      "email": "aysunhsnva@gmail.com",
-      "password": "sxsdwdwe",
-      "id": 12
-    },
-    {
-      "username": "Laboriosam error au",
-      "email": "byvop@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "id": 13
     }
   ],
   "jobs": [

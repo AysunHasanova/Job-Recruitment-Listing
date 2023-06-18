@@ -1,0 +1,9 @@
+.admin{
+    transition: 0.5s;
+    &.adminContent{
+        padding-left: 250px;
+    }
+    .search{
+        width: 40%;
+    }
+}

@@ -19,7 +19,6 @@
 }
 
 #page-content-wrapper {
-  width: 100%;
   position: absolute;
   padding: 15px;
   transition: all 0.5s;
@@ -58,4 +57,14 @@
 }
 .sidebar-nav li:hover {
   background: #846bab;
+}
+
+.admin {
+  transition: 0.5s;
+}
+.admin.adminContent {
+  padding-left: 250px;
+}
+.admin .search {
+  width: 40%;
 }/*# sourceMappingURL=admin.css.map */
