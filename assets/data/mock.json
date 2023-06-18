@@ -1,22 +1,8 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "Aysusnn",
-      "email": "aysuneh@hmemm",
-      "password": "sdkedkwedk",
-      "isAdmin": "false"
-    },
-    {
-      "username": "Autem delectus quis",
-      "email": "berywumer@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "isAdmin": "false",
-      "id": 2
-    },
-    {
-      "username": "Aut fugiat velit b",
-      "email": "fafyfubype@mailinator.com",
+      "username": "semud",
+      "email": "gavovawuqi@mailinator.com",
       "password": "Pa$$w0rd!",
       "isAdmin": "false",
       "id": 3
@@ -62,6 +48,12 @@
       "password": "Pa$$w0rd!",
       "isAdmin": "false",
       "id": 9
+    },
+    {
+      "username": "xigumexex",
+      "email": "zaqityjuce@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "id": 10
     }
   ],
   "jobs": [
