@@ -18,6 +18,8 @@ formContainer = document.querySelector(".form_container");
 formCloseBtn = document.querySelector(".form_close");
 signupBtn = document.querySelector("#signup");
 loginBtn = document.querySelector("#login");
+let Job_API = "http://localhost:3000/jobs";
+let rowJob = document.querySelector("#job-row");
 
 nums.forEach((num) => {
   let startNum = 0;
@@ -151,32 +153,6 @@ async function api() {
       }
     });
   });
-
-  // loginForm.addEventListener("submit", async function (e) {
-  //   e.preventDefault();
-  //   if (loginEmail.value && loginPassword.value) {
-  //     let userEmail = data.find((item) => item.email === loginEmail.value);
-  //     let userPassword = data.find(
-  //       (item) => item.password === loginPassword.value
-  //     );
-  //     // console.log(userEmail);
-  //     if (userEmail && userPassword) {
-  //       window.location = "/admin/admin.html";
-  //       setSuccess(loginEmail);
-  //       setSuccess(loginPassword);
-  //     }
-  //     if (userEmail && !userPassword) {
-  //       setSuccess(loginEmail);
-  //       setError(loginPassword, "Password is wrong");
-  //     } else {
-  //       setError(loginEmail, "User not found");
-  //       setError(loginPassword, "");
-  //     }
-  //   } else {
-  //     setError(loginEmail, "Email is required");
-  //     setError(loginPassword, "Password is required");
-  //   }
-  // });
 }
 api();
 
@@ -197,9 +173,6 @@ const setSuccess = (element) => {
   inputControl.classList.add("success");
   inputControl.classList.remove("error");
 };
-
-let Job_API = "http://localhost:3000/jobs";
-let rowJob = document.querySelector("#job-row");
 
 function drawCard(arr) {
   rowJob.innerHTML = "";

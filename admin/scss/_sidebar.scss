@@ -48,5 +48,15 @@
     &:hover {
       background: #846bab;
     }
+    &.admin-panel{
+      img{
+        border-radius: 50%;
+        width: 80px;
+      }
+      p{
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    }
   }
 }

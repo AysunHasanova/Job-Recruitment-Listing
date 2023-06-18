@@ -5,49 +5,63 @@
       "username": "Aysusnn",
       "email": "aysuneh@hmemm",
       "password": "sdkedkwedk",
-      "isAdmin":"false"
+      "isAdmin": "false"
     },
     {
       "username": "Autem delectus quis",
       "email": "berywumer@mailinator.com",
       "password": "Pa$$w0rd!",
-      "isAdmin":"false",
+      "isAdmin": "false",
       "id": 2
     },
     {
       "username": "Aut fugiat velit b",
       "email": "fafyfubype@mailinator.com",
       "password": "Pa$$w0rd!",
-      "isAdmin":"false",
+      "isAdmin": "false",
       "id": 3
     },
     {
       "username": "Reprehenderit delect",
       "email": "sisop@mailinator.com",
       "password": "Pa$$w0rd!",
-      "isAdmin":"false",
+      "isAdmin": "false",
       "id": 4
     },
     {
       "username": "Qui adipisicing quas",
       "email": "tile@mailinator.com",
       "password": "Pa$$w0rd!",
-      "isAdmin":"false",
+      "isAdmin": "false",
       "id": 5
     },
     {
       "username": "Et alias eiusmod ten",
       "email": "nuxiq@mailinator.com",
       "password": "Pa$$w0rd!",
-      "isAdmin":"false",
+      "isAdmin": "false",
       "id": 6
     },
     {
-      "username": "Aysun",
+      "username": "Admin",
       "email": "aysunhsnva@gmail.com",
-      "password": "2003aysun",
-      "isAdmin":"true",
+      "password": "admin",
+      "isAdmin": "true",
       "id": 7
+    },
+    {
+      "username": "Expedita sint occaec",
+      "email": "qumadiduza@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "isAdmin": "false",
+      "id": 8
+    },
+    {
+      "username": "Illum maxime amet ",
+      "email": "wexah@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "isAdmin": "false",
+      "id": 9
     }
   ],
   "jobs": [
