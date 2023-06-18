@@ -178,10 +178,10 @@ function drawCard(arr) {
   rowJob.innerHTML = "";
   arr.forEach((element) => {
     rowJob.innerHTML += `
-    <div class="col col-4 card py-3 px-4">
+    <div class="col col-4 card py-3 px-2">
             <div class="d-flex align-items-center justify-content-around">
               <img src=${element.image} alt="" />
-              <div>
+              <div class="mx-3">
                 <p class="city">${element.country}, ${element.city}</p>
                 <p class="marka">${element.company}</p>
               </div>
@@ -189,10 +189,10 @@ function drawCard(arr) {
             <hr />
             <div class="d-flex align-items-center justify-content-between">
               <p><i class="fa-solid fa-clock-rotate-left"></i> Remote</p>
-              <p><i class="fa-solid fa-clock-rotate-left"></i> Remote</p>
+              <p><i class="fa-solid fa-clock-rotate-left"></i> Full time</p>
             </div>
             <p class="pb-3">
-              <i class="fa-solid fa-clock-rotate-left"></i> Remote
+              <i class="fa-solid fa-clock-rotate-left"></i> Part time
             </p>
             <h5>${element.nameJob}</h5>
             <p class="text-start">
@@ -207,10 +207,11 @@ function drawCard(arr) {
             </div>
             <div class="text-start">
               <i class="fa-solid fa-dollar-sign"></i> <span>$${element.firstprice}k-$${element.lastprice}k</span>
+
+              
             </div>
             <div class="text-start my-4">
-              <a href="" class="add">+</a>
-              <button class="detail">JOB DETAIL</button>
+              <a href="" class="add"><i class="fa-solid fa-bookmark"></i></a>
             </div>
           </div>
     `;
