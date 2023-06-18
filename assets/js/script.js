@@ -2,7 +2,7 @@ let nums = document.querySelectorAll(".num");
 let numbers = document.querySelectorAll(".number");
 let interval = 5000;
 let intervalNum = 8000;
-let menu = document.querySelector(".fa-bars");
+let menu = document.querySelector("#menu");
 let nav = document.querySelector("nav");
 let Mock_API = "http://localhost:3000/users";
 let loginEmail = document.querySelector(".login-email");
@@ -47,6 +47,25 @@ numbers.forEach((num) => {
 
 menu.addEventListener("click", function () {
   nav.classList.toggle("show");
+  this.classList.contains("fa-bars")
+    ? (this.classList = "fa-solid fa-xmark")
+    : (this.classList = "fa-solid fa-bars");
+});
+
+
+let body = document.querySelector("body");
+let modeToggle = body.querySelector(".mode-toggle");
+let getMode = localStorage.getItem("mode");
+if (getMode && getMode === "dark") {
+  body.classList.toggle("dark");
+}
+modeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  if (body.classList.contains("dark")) {
+    localStorage.setItem("mode", "dark");
+  } else {
+    localStorage.setItem("mode", "light");
+  }
 });
 
 formOpenBtn.addEventListener("click", () => home.classList.add("show"));
@@ -187,9 +206,9 @@ function drawCard(arr) {
   });
 }
 
-async function cards(){
-  let res = await axios(Job_API)
-  let data = res.data
-  drawCard(data)
+async function cards() {
+  let res = await axios(Job_API);
+  let data = res.data;
+  drawCard(data);
 }
-cards()
+cards();

@@ -6,7 +6,7 @@
       display: flex;
       align-items: center;
       justify-content: space-evenly;
-      @media only screen and (max-width:992px){
+      @media only screen and (max-width: 992px) {
         flex-direction: column;
       }
       h1 {
@@ -24,7 +24,7 @@
         width: 50%;
         opacity: 0.7;
         font-size: 14px;
-        @media only screen and (max-width:992px){
+        @media only screen and (max-width: 992px) {
           width: 80%;
         }
       }
@@ -32,14 +32,14 @@
     .content {
       column-gap: 10px;
       display: flex;
-      @media only screen and (max-width:992px){
+      @media only screen and (max-width: 992px) {
         flex-direction: column;
       }
       .blog {
         padding: 20px;
         width: 500px;
         box-shadow: 1px 2px 20px #0000005d;
-        @media only screen and (max-width:992px){
+        @media only screen and (max-width: 992px) {
           width: 100%;
         }
         .image {
@@ -66,7 +66,7 @@
         }
       }
       .blog-content {
-        @media only screen and (max-width:992px){
+        @media only screen and (max-width: 992px) {
           margin-top: 10px;
         }
         .blog-item {
@@ -74,7 +74,7 @@
           flex-direction: row;
           box-shadow: 1px 2px 20px #0000005d;
           margin-bottom: 10px;
-          @media only screen and (max-width:762px){
+          @media only screen and (max-width: 762px) {
             flex-direction: column;
           }
           .small-image {
@@ -90,7 +90,7 @@
               }
             }
           }
-          h3 {
+        h3{
             font-size: 20px;
             color: #000;
             font-weight: bold;

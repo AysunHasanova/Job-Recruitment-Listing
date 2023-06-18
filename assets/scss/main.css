@@ -7,64 +7,94 @@
   font-family: "Poppins", sans-serif;
 }
 
-header {
+body.dark {
+  background-color: #0b0217;
+  color: #fff;
+}
+body.dark .num {
+  color: #fff;
+}
+body.dark .card {
+  background-color: #000;
+}
+body.dark .topic-text {
+  color: #fff;
+}
+body.dark .year-exp {
+  color: #000;
+}
+body.dark .interview-text {
+  color: #000;
+}
+body.dark h3 {
+  color: #fff;
+}
+body header {
   background-image: url(/images/bg-image.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-header .header {
+body header .header {
   background-color: #3d1737;
   padding: 10px 0;
 }
-header .header .container {
+body header .header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-header .header .container .logo {
+body header .header .container .logo {
   width: 200px;
 }
 @media only screen and (max-width: 762px) {
-  header .header .container .logo {
+  body header .header .container .logo {
     width: 150px;
   }
 }
-header .header .container nav {
+body header .header .container nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 100px;
 }
-header .header .container nav .nav-list {
+body header .header .container nav .nav-list {
   display: flex;
   gap: 30px;
   margin: 0 !important;
   padding: 0 !important;
 }
-header .header .container nav .nav-list li a {
+body header .header .container nav .nav-list li a {
   color: #fff;
 }
-header .header .container nav .nav-list li a:hover {
+body header .header .container nav .nav-list li a:hover {
   color: #ffbb33;
 }
-header .header .container nav .log {
+body header .header .container nav .log {
   color: white;
   border: none;
   background-color: #3d1737;
 }
-header .header .container nav .log:hover {
+body header .header .container nav .log:hover {
+  color: #ffbb33;
+}
+body header .header .container nav .mode a {
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+}
+body header .header .container nav .mode a:hover {
   color: #ffbb33;
 }
 @media only screen and (max-width: 992px) {
-  header .header .container nav {
+  body header .header .container nav {
     display: none;
   }
-  header .header .container nav.show {
+  body header .header .container nav.show {
     display: block;
     z-index: 99;
   }
-  header .header .container nav.show .nav-list {
+  body header .header .container nav.show .nav-list {
     text-align: start;
     width: 100%;
     background-color: #4e1f47;
@@ -75,36 +105,44 @@ header .header .container nav .log:hover {
   }
 }
 @media only screen and (max-width: 992px) and (max-width: 762px) {
-  header .header .container nav.show .nav-list {
+  body header .header .container nav.show .nav-list {
     top: 70px;
   }
 }
 @media only screen and (max-width: 992px) {
-  header .header .container nav.show .nav-list li {
+  body header .header .container nav.show .nav-list li {
     padding-left: 25px;
     padding-bottom: 10px;
   }
 }
-header .header .container .fa-bars {
+@media only screen and (max-width: 992px) {
+  body header .header .container nav.show .mode {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+  }
+}
+body header .header .container #menu {
   display: none;
 }
 @media only screen and (max-width: 992px) {
-  header .header .container .fa-bars {
+  body header .header .container #menu {
     display: block;
     color: #fff;
     font-size: 36px;
+    cursor: pointer;
   }
 }
-header .content {
+body header .content {
   position: relative;
   background-color: rgba(61, 23, 55, 0.8078431373);
 }
-header .content.show .form_container {
+body header .content.show .form_container {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, -50%) scale(1);
 }
-header .content .form_container {
+body header .content .form_container {
   position: fixed;
   max-width: 320px;
   width: 100%;
@@ -120,31 +158,31 @@ header .content .form_container {
   pointer-events: none;
   transition: all 0.4s ease-out;
 }
-header .content .form_container .button {
+body header .content .form_container .button {
   background: #7d2ae8;
   margin-top: 30px;
   width: 100%;
   padding: 10px 0;
   border-radius: 10px;
 }
-header .content .form_container a {
+body header .content .form_container a {
   color: #7d2ae8;
   font-size: 12px;
 }
-header .content .form_container a:hover {
+body header .content .form_container a:hover {
   text-decoration: underline;
 }
-header .content .form_container .login_signup {
+body header .content .form_container .login_signup {
   font-size: 12px;
   text-align: center;
   margin-top: 15px;
 }
-header .content .form_container h2 {
+body header .content .form_container h2 {
   font-size: 22px;
   color: #0b0217;
   text-align: center;
 }
-header .content .form_container .form_close {
+body header .content .form_container .form_close {
   position: absolute;
   top: 10px;
   right: 20px;
@@ -153,34 +191,34 @@ header .content .form_container .form_close {
   opacity: 0.7;
   cursor: pointer;
 }
-header .content .form_container .input_box {
+body header .content .form_container .input_box {
   position: relative;
   margin-top: 30px;
   width: 100%;
   height: 40px;
 }
-header .content .form_container .input_box.success input {
+body header .content .form_container .input_box.success input {
   border-bottom: 1px solid green;
 }
-header .content .form_container .input_box.error input {
+body header .content .form_container .input_box.error input {
   border-bottom: 1px solid red;
 }
-header .content .form_container .input_box .error {
+body header .content .form_container .input_box .error {
   color: red;
   font-size: 12px;
   margin-bottom: 10px;
 }
-header .content .form_container .input_box i {
+body header .content .form_container .input_box i {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
   color: #707070;
 }
-header .content .form_container .input_box i.email, header .content .form_container .input_box i.password, header .content .form_container .input_box i.user {
+body header .content .form_container .input_box i.email, body header .content .form_container .input_box i.password, body header .content .form_container .input_box i.user {
   left: 0;
 }
-header .content .form_container .input_box input {
+body header .content .form_container .input_box input {
   height: 100%;
   width: 100%;
   border: none;
@@ -190,69 +228,69 @@ header .content .form_container .input_box input {
   transition: all 0.2s ease;
   border-bottom: 1.5px solid #aaaaaa;
 }
-header .content .form_container .input_box input:focus {
+body header .content .form_container .input_box input:focus {
   border-color: #7d2ae8;
 }
-header .content .form_container .option_field {
+body header .content .form_container .option_field {
   margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-header .content .form_container .signup_form {
+body header .content .form_container .signup_form {
   display: none;
 }
-header .content .form_container.active .signup_form {
+body header .content .form_container.active .signup_form {
   display: block;
 }
-header .content .form_container.active .login_form {
+body header .content .form_container.active .login_form {
   display: none;
 }
-header .content .container {
+body header .content .container {
   display: flex;
 }
 @media only screen and (max-width: 992px) {
-  header .content .container {
+  body header .content .container {
     flex-direction: column;
   }
 }
-header .content .container .text {
+body header .content .container .text {
   padding: 100px 0;
   width: 50%;
 }
 @media only screen and (max-width: 992px) {
-  header .content .container .text {
+  body header .content .container .text {
     width: 100%;
   }
 }
-header .content .container .text h1 {
+body header .content .container .text h1 {
   font-weight: bolder;
   font-size: 60px;
   color: #fff;
 }
 @media only screen and (max-width: 762px) {
-  header .content .container .text h1 {
+  body header .content .container .text h1 {
     font-size: 36px;
   }
 }
-header .content .container .text h1::before {
+body header .content .container .text h1::before {
   display: block;
   content: "";
   background-color: #ffbb33;
   width: 80px;
   height: 2px;
 }
-header .content .container .text h1 span {
+body header .content .container .text h1 span {
   color: #ffbb33;
 }
-header .content .container .text p {
+body header .content .container .text p {
   padding: 0 !important;
   margin: 0 !important;
   color: #fff;
   font-size: 20px;
   letter-spacing: 3px;
 }
-header .content .container .text .my-4 .browse-job {
+body header .content .container .text .my-4 .browse-job {
   color: #fff;
   letter-spacing: 1.3px;
   font-size: 18px;
@@ -264,21 +302,21 @@ header .content .container .text .my-4 .browse-job {
   transform: scale(1);
   border: none;
 }
-header .content .container .text .my-4 .browse-job:hover {
+body header .content .container .text .my-4 .browse-job:hover {
   transform: scale(0.9);
   background-color: #db9d32;
 }
-header .content .container .text .links p {
+body header .content .container .text .links p {
   font-size: 14px;
 }
-header .content .container .text .links .icons {
+body header .content .container .text .links .icons {
   display: flex;
   margin: 0 !important;
   padding: 0 !important;
   gap: 7px;
   margin-top: 10px !important;
 }
-header .content .container .text .links .icons a {
+body header .content .container .text .links .icons a {
   font-size: 14px;
   color: #fff;
   border: 1px solid transparent;
@@ -286,11 +324,11 @@ header .content .container .text .links .icons a {
   background-color: #ffbb33;
   border-radius: 50%;
 }
-header .content .container .text .links .icons a:hover {
+body header .content .container .text .links .icons a:hover {
   background-color: #3d1737;
   color: #ffbb33;
 }
-header .content .container .image {
+body header .content .container .image {
   background-image: url(/images/Circle-BG-3.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -299,20 +337,20 @@ header .content .container .image {
   position: relative;
 }
 @media only screen and (max-width: 992px) {
-  header .content .container .image {
+  body header .content .container .image {
     display: none;
   }
 }
-header .content .container .image img {
+body header .content .container .image img {
   width: 420px;
   position: relative;
   top: 0;
   left: 70px;
 }
-header .content .container .image .pics {
+body header .content .container .image .pics {
   border-radius: 50%;
 }
-header .content .container .image .pics.guy {
+body header .content .container .image .pics.guy {
   position: absolute;
   top: 420px;
   left: 480px;
@@ -320,7 +358,7 @@ header .content .container .image .pics.guy {
   height: 60px;
   border: 3px solid #ffbb33;
 }
-header .content .container .image .pics.man {
+body header .content .container .image .pics.man {
   position: absolute;
   top: 200px;
   left: 100px;
@@ -328,7 +366,7 @@ header .content .container .image .pics.man {
   height: 50px;
   border: 3px solid #ffbb33;
 }
-header .content .container .image .pics.redhead {
+body header .content .container .image .pics.redhead {
   width: 70px;
   height: 70px;
   border: 3px solid #4e1f47;
@@ -336,7 +374,7 @@ header .content .container .image .pics.redhead {
   left: 0;
   top: 470px;
 }
-header .content .container .image .pics.woman {
+body header .content .container .image .pics.woman {
   width: 80px;
   height: 80px;
   border: 3px solid #fff;
@@ -888,7 +926,11 @@ header .content .container .image .pics.woman {
   transform: rotateY(360deg);
 }
 @media (max-width: 991.5px) {
-  .comments .container .col-lg-4 {
+  .comments .container .row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  .comments .container .row .col-lg-4 {
     margin-top: 40px;
     margin-bottom: 20px;
   }
