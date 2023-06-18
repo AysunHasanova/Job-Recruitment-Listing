@@ -5,6 +5,7 @@ let userName = document.querySelector("#username");
 let email = document.querySelector("#email");
 let password = document.querySelector("#password");
 let submitBtn = document.querySelector(".btn-primary");
+let isAdmin = document.querySelector("#isAdmin")
 let editedId;
 
 $(document).ready(function () {
@@ -49,9 +50,11 @@ async function createUser() {
         username: userName.value,
         email: email.value,
         password: password.value,
+        isAdmin:isAdmin.value
       };
-    await axios.post(Mock_API, obj);
+    await axios.post(Mock_API, userObj);
     userTable();
+    console.log(isAdmin.value);
   }
 
 async function editUser(id) {

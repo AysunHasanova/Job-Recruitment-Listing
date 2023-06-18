@@ -114,44 +114,49 @@ async function api() {
       setError(signPassword, "Password is required");
     }
   });
+  //  let obj=data.find(item=> item.user
+  //   )
+  // let obj = arr.find(item => item.email == email.value && item.password);
+  // if(obj)){
+  //   if(obj.isadmin==="true"){
+  //     window.location = "admin.html"
+  //   }else{
+  //     window.location = "home.html"
+  //   }
+  // }else{
 
-  data.forEach((element) => {
-    // console.log(element);
-    loginForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      // console.log(element.isAdmin);
-      if (loginEmail.value && loginPassword.value) {
-        if (
-          element.email === loginEmail.value &&
-          element.password === loginPassword.value &&
-          element.isAdmin === "false"
-        ) {
-          console.log("isAdmin false");
+  // }
+
+  loginForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    if (loginEmail.value && loginPassword.value) {
+      let obj = data.find(
+        (item) =>
+          item.email === loginEmail.value &&
+          item.password === loginPassword.value
+      );
+      let notobj = data.find(
+        (item) =>
+          item.email === loginEmail.value &&
+          item.password !== loginPassword.value
+      );
+      if (obj) {
+        if (obj.isAdmin) {
+          window.location = "/admin/admin.html";
+        } else {
           window.location = "index.html";
         }
-        if (
-          element.email === loginEmail.value &&
-          element.password === loginPassword.value &&
-          element.isAdmin === "true"
-        ) {
-          console.log("isAdmin true");
-          window.location = "/admin/admin.html";
-        }
-        if (
-          element.email === loginEmail.value &&
-          element.password !== loginPassword.value
-        ) {
-          setSuccess(loginEmail);
-          setError(loginPassword, "Password is wrong");
-        } else {
-          setError(loginEmail, "User not found");
-          setError(loginPassword, "");
-        }
+      } else if (notobj) {
+        setSuccess(loginEmail);
+        setError(loginPassword, "Password is wrong");
       } else {
-        setError(loginEmail, "Email is required");
-        setError(loginPassword, "Password is required");
+        setError(loginEmail, "User not found");
+        setError(loginPassword, "");
       }
-    });
+    } else {
+      setError(loginEmail, "Email is required");
+      setError(loginPassword, "Password is required");
+    }
   });
 }
 api();
