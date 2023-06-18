@@ -44,6 +44,16 @@ async function deleteUser(id) {
   await axios.delete(`${Mock_API}/${id}`);
 }
 
+async function createUser() {
+    const userObj = {
+        username: userName.value,
+        email: email.value,
+        password: password.value,
+      };
+    await axios.post(Mock_API, obj);
+    userTable();
+  }
+
 async function editUser(id) {
   const userObj = {
     username: userName.value,
