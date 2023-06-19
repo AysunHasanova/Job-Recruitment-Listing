@@ -140,3 +140,13 @@ form.addEventListener("submit", (e) => {
   googleLink.value = "";
   windowLink.value = "";
 });
+
+searchInput.addEventListener("input", async function (e) {
+    let res = await axios(Team_API);
+    let data = await res.data;
+    let filtered = data
+      .filter((item) =>
+        item.member.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()) 
+      );
+    drawTable(filtered);
+  });
