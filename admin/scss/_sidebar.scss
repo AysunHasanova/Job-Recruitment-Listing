@@ -1,61 +1,84 @@
-/* Sidebar */
-#sidebar-wrapper {
-  z-index: 1;
-  position: absolute;
-  width: 0;
-  height: 100%;
-  overflow-y: hidden;
-  opacity: 0.9;
-  transition: all 0.5s;
-  display: flex;
-  align-items: start;
-}
-#page-content-wrapper {
-  // width: 100%;
-  position: absolute;
-  padding: 15px;
-  transition: all 0.5s;
-}
-#menu-toggle {
-  transition: all 0.3s;
-  font-size: 2em;
-  color: #000;
-}
-#wrapper.menuDisplayed {
+body {
+  &.dark {
+    background-color: #000;
+    color: #fff;
+    .sidebar-nav {
+      li {
+        a {
+          color: #fff;
+        }
+      }
+    }
+    #menu-toggle{
+      color:#fff;
+    }
+    .admin{
+      dialog{
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+
+  /* Sidebar */
   #sidebar-wrapper {
-    width: 250px;
+    z-index: 1;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    overflow-y: hidden;
+    opacity: 0.9;
+    transition: all 0.5s;
+    display: flex;
+    align-items: start;
   }
   #page-content-wrapper {
-    padding-left: 250px;
+    // width: 100%;
+    position: absolute;
+    padding: 15px;
+    transition: all 0.5s;
   }
-}
-.sidebar-nav {
-  padding: 0;
-  list-style: none;
-  transition: all 0.5s;
-  width: 100%;
-  text-align: center;
-  li {
-    line-height: 40px;
-    width: 100%;
+  #menu-toggle {
     transition: all 0.3s;
-    padding: 10px;
-    a {
-      display: block;
-      text-decoration: none;
-      color: #000;
+    font-size: 2em;
+    color: #000;
+  }
+  #wrapper.menuDisplayed {
+    #sidebar-wrapper {
+      width: 250px;
     }
-    &:hover {
-      background: #846bab;
+    #page-content-wrapper {
+      padding-left: 250px;
     }
-    &.admin-panel{
-      img{
-        border-radius: 50%;
-        width: 80px;
+  }
+  .sidebar-nav {
+    padding: 0;
+    list-style: none;
+    transition: all 0.5s;
+    width: 100%;
+    text-align: center;
+    li {
+      line-height: 40px;
+      width: 100%;
+      transition: all 0.3s;
+      padding: 10px;
+      a {
+        display: block;
+        text-decoration: none;
+        color: #000;
       }
-      p{
-        margin: 0 !important;
-        padding: 0 !important;
+      &:hover {
+        background: #846bab;
+      }
+      &.admin-panel {
+        img {
+          border-radius: 50%;
+          width: 80px;
+        }
+        p {
+          margin: 0 !important;
+          padding: 0 !important;
+        }
       }
     }
   }

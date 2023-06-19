@@ -48,13 +48,6 @@
             <button class="log" id="form-open">
               Login/Register <i class="fa-solid fa-right-to-bracket"></i>
             </button>
-            <div class="mode">
-              <div class="mode-toggle">
-                <a href="#">
-                  <i class="uil uil-moon"></i>
-                </a>
-              </div>
-            </div>
           </nav>
           <i class="fa-solid fa-bars" id="menu"></i>
         </div>
@@ -221,23 +214,20 @@
             <p style="color: #fff; font-size: 14px">
               Lorem ipsum dolor sit amet consectetur adipiscing.
             </p>
-            <select name="" id="" class="form-select">
-              <option value="Category">Category</option>
-              <option value="Item1">Item1</option>
-              <option value="Item2">Item2</option>
-              <option value="Item3">Item3</option>
+            <select name="" id="category-search" class="form-select">
+              <option value="Category" hidden>Category</option>
+              <option value="Web Developer">Web Developer</option>
+              <option value="Programmer">Programmer</option>
+              <option value="Fullstack Developer">Fullstack Developer</option>
+              <option value="Web Designer">Web Designer</option>
             </select>
-            <select name="" id="" class="form-select my-3">
-              <option value="Category">Area</option>
-              <option value="Item1">Item1</option>
-              <option value="Item2">Item2</option>
-              <option value="Item3">Item3</option>
+            <select name="" id="area-search" class="form-select my-3">
+              <option value="Area" hidden>Area</option>
+              <option value="Azerbaijan">Azerbaijan</option>
+              <option value="America">America</option>
+              <option value="Turkey">Turkey</option>
+              <option value="Brazilia">Brazilia</option>
             </select>
-            <div class="my-4">
-              <a href=""
-                >Search Job <i class="fa-solid fa-magnifying-glass"></i
-              ></a>
-            </div>
           </div>
         </div>
       </div>
@@ -279,7 +269,7 @@
               <i class="fa-regular fa-star-half-stroke"></i>
             </div>
             <div class="text-start">
-              <i class="fa-solid fa-dollar-sign"></i> <span>$15k-$35k</span>
+              <i class="fa-solid fa-dollar-sign"></i> <span></span>
             </div>
             <div class="text-start my-4">
               <a href="" class="add">+</a>
@@ -517,7 +507,7 @@
                 2023</span
               >
               <a href="" class="news">
-                <h3 >Can Artificial Intelligence Help with Job Recruitment?</h3>
+                <h3>Can Artificial Intelligence Help with Job Recruitment?</h3>
               </a>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
@@ -698,6 +688,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script type="module" src="./assets/js/common.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

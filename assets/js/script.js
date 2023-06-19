@@ -20,6 +20,8 @@ signupBtn = document.querySelector("#signup");
 loginBtn = document.querySelector("#login");
 let Job_API = "http://localhost:3000/jobs";
 let rowJob = document.querySelector("#job-row");
+let categorySearch = document.querySelector("#category-search");
+let areaSearch = document.querySelector("#area-search");
 
 nums.forEach((num) => {
   let startNum = 0;
@@ -46,138 +48,6 @@ numbers.forEach((num) => {
     }
   }, duration);
 });
-
-menu.addEventListener("click", function () {
-  nav.classList.toggle("show");
-  this.classList.contains("fa-bars")
-    ? (this.classList = "fa-solid fa-xmark")
-    : (this.classList = "fa-solid fa-bars");
-});
-
-let body = document.querySelector("body");
-let modeToggle = body.querySelector(".mode-toggle");
-let getMode = localStorage.getItem("mode");
-if (getMode && getMode === "dark") {
-  body.classList.toggle("dark");
-}
-modeToggle.addEventListener("click", () => {
-  body.classList.toggle("dark");
-  if (body.classList.contains("dark")) {
-    localStorage.setItem("mode", "dark");
-  } else {
-    localStorage.setItem("mode", "light");
-  }
-});
-
-formOpenBtn.addEventListener("click", () => home.classList.add("show"));
-formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
-
-signupBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  formContainer.classList.add("active");
-});
-loginBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  formContainer.classList.remove("active");
-});
-
-async function api() {
-  let res = await axios(Mock_API);
-  let data = res.data;
-  signForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    if (signEmail.value && signPassword.value && username.value) {
-      let userObj = {
-        username: username.value,
-        email: signEmail.value,
-        password: signPassword.value,
-        isAdmin: "false",
-      };
-      let found = false;
-      for (let i = 0; i < data.length; i++) {
-        if (userObj.username === data[i].username) {
-          found = true;
-          break;
-        }
-      }
-      if (found) {
-        setError(username, "User is already");
-        setError(signEmail, "");
-        setError(signPassword, "");
-      } else {
-        await axios.post(Mock_API, userObj);
-      }
-    } else if (!signPassword.value && signEmail.value && username.value) {
-      setSuccess(signEmail);
-      setSuccess(username);
-      setError(signPassword, "Password is required");
-    } else if (!signEmail.value && signPassword.value && username.value) {
-      setSuccess(signPassword);
-      setSuccess(username);
-      setError(signEmail, "Email is required");
-    } else if (!signEmail.value && !signPassword.value && username.value) {
-      setSuccess(username);
-      setError(signEmail, "Email is required");
-      setError(signPassword, "Password is required");
-    }
-    else{
-      setError(signEmail, "Email is required");
-      setError(signPassword, "Password is required");
-      setError(username, "Username is required");
-    }
-  });
-
-  loginForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    if (loginEmail.value && loginPassword.value) {
-      let obj = data.find(
-        (item) =>
-          item.email === loginEmail.value &&
-          item.password === loginPassword.value
-      );
-      let wrongPassword = data.find(
-        (item) =>
-          item.email === loginEmail.value &&
-          item.password !== loginPassword.value
-      );
-      if (obj) {
-        if (obj.isAdmin) {
-          window.location = "/admin/admin.html";
-        } else {
-          window.location = "index.html";
-        }
-      } else if (wrongPassword) {
-        setSuccess(loginEmail);
-        setError(loginPassword, "Password is wrong");
-      } else {
-        setError(loginEmail, "User not found");
-        setError(loginPassword, "");
-      }
-    } else {
-      setError(loginEmail, "Email is required");
-      setError(loginPassword, "Password is required");
-    }
-  });
-}
-api();
-
-const setError = (element, message) => {
-  const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector(".error");
-
-  errorDisplay.innerText = message;
-  inputControl.classList.add("error");
-  inputControl.classList.remove("success");
-};
-
-const setSuccess = (element) => {
-  const inputControl = element.parentElement;
-  const errorDisplay = inputControl.querySelector(".error");
-
-  errorDisplay.innerText = "";
-  inputControl.classList.add("success");
-  inputControl.classList.remove("error");
-};
 
 function drawCard(arr) {
   rowJob.innerHTML = "";
@@ -211,12 +81,13 @@ function drawCard(arr) {
               <i class="fa-regular fa-star-half-stroke"></i>
             </div>
             <div class="text-start">
-              <i class="fa-solid fa-dollar-sign"></i> <span>$${element.firstprice}k-$${element.lastprice}k</span>
+              <i class="fa-solid fa-dollar-sign"></i> <span>$${element.price}</span>
 
               
             </div>
             <div class="text-start my-4">
               <a href="" class="add"><i class="fa-solid fa-bookmark"></i></a>
+              <a href="detail.html?id=${element.id}" class="detail">APPLY</a>
             </div>
           </div>
     `;
@@ -229,3 +100,24 @@ async function cards() {
   drawCard(data);
 }
 cards();
+
+categorySearch.addEventListener("change", async function (e) {
+  let res = await axios(Job_API);
+  let data = await res.data;
+  let filtered = data.filter((item) =>
+    item.nameJob
+      .toLocaleLowerCase()
+      .includes(e.target.value.toLocaleLowerCase())
+  );
+  drawCard(filtered);
+});
+areaSearch.addEventListener("change", async function (e) {
+  let res = await axios(Job_API);
+  let data = await res.data;
+  let filtered = data.filter((item) =>
+    item.country
+      .toLocaleLowerCase()
+      .includes(e.target.value.toLocaleLowerCase())
+  );
+  drawCard(filtered);
+});

@@ -6,8 +6,24 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Sidebar */
-#sidebar-wrapper {
+body {
+  /* Sidebar */
+}
+body.dark {
+  background-color: #000;
+  color: #fff;
+}
+body.dark .sidebar-nav li a {
+  color: #fff;
+}
+body.dark #menu-toggle {
+  color: #fff;
+}
+body.dark .admin dialog {
+  background-color: #000;
+  color: #fff;
+}
+body #sidebar-wrapper {
   z-index: 1;
   position: absolute;
   width: 0;
@@ -18,68 +34,67 @@
   display: flex;
   align-items: start;
 }
-
-#page-content-wrapper {
+body #page-content-wrapper {
   position: absolute;
   padding: 15px;
   transition: all 0.5s;
 }
-
-#menu-toggle {
+body #menu-toggle {
   transition: all 0.3s;
   font-size: 2em;
   color: #000;
 }
-
-#wrapper.menuDisplayed #sidebar-wrapper {
+body #wrapper.menuDisplayed #sidebar-wrapper {
   width: 250px;
 }
-#wrapper.menuDisplayed #page-content-wrapper {
+body #wrapper.menuDisplayed #page-content-wrapper {
   padding-left: 250px;
 }
-
-.sidebar-nav {
+body .sidebar-nav {
   padding: 0;
   list-style: none;
   transition: all 0.5s;
   width: 100%;
   text-align: center;
 }
-.sidebar-nav li {
+body .sidebar-nav li {
   line-height: 40px;
   width: 100%;
   transition: all 0.3s;
   padding: 10px;
 }
-.sidebar-nav li a {
+body .sidebar-nav li a {
   display: block;
   text-decoration: none;
   color: #000;
 }
-.sidebar-nav li:hover {
+body .sidebar-nav li:hover {
   background: #846bab;
 }
-.sidebar-nav li.admin-panel img {
+body .sidebar-nav li.admin-panel img {
   border-radius: 50%;
   width: 80px;
 }
-.sidebar-nav li.admin-panel p {
+body .sidebar-nav li.admin-panel p {
   margin: 0 !important;
   padding: 0 !important;
 }
 
-.admin {
+body.dark table {
+  color: #fff;
+}
+body .admin {
   padding: 30px 0;
   transition: 0.5s;
   /*General Styles*/
 }
-.admin.adminContent {
+body .admin.adminContent {
   padding-left: 250px;
 }
-.admin .search {
+body .admin .search {
   width: 35%;
 }
-.admin dialog {
+body .admin dialog {
   position: relative;
   left: 50%;
   top: 50%;
@@ -93,11 +108,11 @@
   box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
   animation: fadeIn 1s ease both;
 }
-.admin dialog::backdrop {
+body .admin dialog::backdrop {
   animation: fadeIn 1s ease both;
   z-index: 2;
 }
-.admin dialog .x {
+body .admin dialog .x {
   filter: grayscale(1);
   border: none;
   background: none;
@@ -108,11 +123,11 @@
   cursor: pointer;
   transform-origin: center;
 }
-.admin dialog .x:hover {
+body .admin dialog .x:hover {
   filter: grayscale(0);
   transform: scale(1.1);
 }
-.admin button.primary {
+body .admin button.primary {
   margin-top: 20px;
   display: inline-block;
   font-size: 0.8rem;
@@ -126,16 +141,16 @@
   cursor: pointer;
   box-shadow: 0 10px 20px -10px rgb(var(--vs-primary)/50%);
 }
-.admin button.primary:hover {
+body .admin button.primary:hover {
   box-shadow: 0 20px 20px -10px rgb(var(--vs-primary)/50%);
   transform: translateY(-5px);
 }
-.admin button.primary.edit {
+body .admin button.primary.edit {
   background-color: #198754;
   border-radius: 3px;
   padding: 9px 12px;
 }
-.admin button.primary.edit:hover {
+body .admin button.primary.edit:hover {
   transform: translate(0);
 }
 @keyframes fadeIn {
@@ -146,35 +161,46 @@
     opacity: 1;
   }
 }
-
-#jobTable,
-#userTable {
+body #jobTable,
+body #userTable {
   margin-top: 40px;
 }
-#jobTable img,
-#userTable img {
+body #jobTable img,
+body #userTable img {
   width: 60px;
   height: 60px;
 }
-#jobTable .id,
-#userTable .id {
+body #jobTable .id,
+body #userTable .id {
   font-weight: bolder;
 }
 
-.row {
+body.dark {
+  background-color: #000;
+  color: #fff;
+}
+body.dark .col {
+  color: #fff;
+  background-color: #000;
+  box-shadow: 1px 2px 20px rgba(255, 255, 255, 0.3019607843);
+}
+body .row {
   -moz-column-gap: 10px;
        column-gap: 10px;
 }
-.row .col {
+body .row .col {
   padding: 10px;
   position: relative;
   width: 350px;
   margin-bottom: 10px;
 }
-.row .col .text-danger {
+body .row .col .text-danger {
   position: absolute;
   right: 15px;
   font-size: 20px;
+}
+body .row .col h4 {
+  color: #ffbb33;
 }
 
 .teamTable img {

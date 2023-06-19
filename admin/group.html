@@ -16,6 +16,10 @@
       crossorigin="anonymous"
     />
     <link
+    rel="stylesheet"
+    href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+  />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -33,8 +37,8 @@
         <ul class="sidebar-nav">
           <li class="admin-panel">
             <img src="/images/redhead-young-woman.jpg" alt="" />
-            <p>Admin</p>
-            <p>aysunhsnva@gmail.com</p>
+            <h2>Admin</h2>
+           
           </li>
           <hr />
           <li>
@@ -52,6 +56,18 @@
             <a href="group.html"
               ><i class="fa-solid fa-people-group"></i> Team</a
             >
+          </li>
+          <li>
+            <a href="appeals.html"
+              ><i class="fa-solid fa-paper-plane"></i> Appeals</a
+            >
+          </li>
+          <li>
+            <div class="mode">
+              <div class="mode-toggle">
+                <a href="#"> <i class="uil uil-moon"></i> Dark Mode </a>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -71,7 +87,7 @@
     </div>
 
     <div class="container admin">
-      <h1>Messages</h1>
+      <h1>Team</h1>
       <div class="search">
         <input
           type="search"
@@ -98,12 +114,12 @@
               />
             </div>
             <div class="mb-3">
-              <label for="job" class="form-label">Job :</label>
+              <label for="position" class="form-label">Position :</label>
               <input
                 type="text"
                 class="form-control"
-                id="job"
-                placeholder="Enter job..."
+                id="position"
+                placeholder="Enter position..."
               />
             </div>
             <div class="mb-3">
@@ -157,7 +173,7 @@
           <th>ID</th>
           <th>img</th>
           <th>Member</th>
-          <th>Job</th>
+          <th>Position</th>
           <th>Instagram</th>
           <th>Behance</th>
           <th>Google</th>

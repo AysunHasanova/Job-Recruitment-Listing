@@ -7,34 +7,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-body.dark {
-  background-color: #0b0217;
-  color: #fff;
-}
-body.dark .num {
-  color: #fff;
-}
-body.dark .card {
-  background-color: #000;
-}
-body.dark .topic-text {
-  color: #fff;
-}
-body.dark .year-exp {
-  color: #000;
-}
-body.dark .interview-text {
-  color: #000;
-}
-body.dark h3 {
-  color: #fff;
-}
-body.dark .login_signup {
-  color: #000;
-}
-body.dark .information-section .col {
-  color: #000;
-}
 body header {
   background-image: url(/images/bg-image.jpg);
   background-position: center;
@@ -84,14 +56,6 @@ body header .header .container nav .log {
 body header .header .container nav .log:hover {
   color: #ffbb33;
 }
-body header .header .container nav .mode a {
-  cursor: pointer;
-  font-size: 24px;
-  color: #fff;
-}
-body header .header .container nav .mode a:hover {
-  color: #ffbb33;
-}
 @media only screen and (max-width: 992px) {
   body header .header .container nav {
     display: none;
@@ -119,13 +83,6 @@ body header .header .container nav .mode a:hover {
   body header .header .container nav.show .nav-list li {
     padding-left: 25px;
     padding-bottom: 10px;
-  }
-}
-@media only screen and (max-width: 992px) {
-  body header .header .container nav.show .mode {
-    position: absolute;
-    top: 70px;
-    right: 20px;
   }
 }
 body header .header .container #menu {
@@ -424,7 +381,7 @@ body header .content .container .image .pics.woman {
   left: 70px;
   border-radius: 10px;
   width: 550px;
-  height: 350px;
+  height: 293px;
   padding: 0 !important;
   background-image: url(/images/shot-of-a-group-of-businesspeople-using-a-laptop-w-YUBSH4F.jpg);
   background-position: center;
@@ -1260,6 +1217,61 @@ body header .content .container .image .pics.woman {
 .helps .container .row .card a:hover {
   color: #ffbb33;
   transform: scale(0.9);
+}
+
+.job-detail .col-4 {
+  margin-top: 40px;
+  padding: 0 !important;
+}
+.job-detail .col-4 .card {
+  padding: 20px;
+  box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.1215686275);
+}
+.job-detail .col-4 .card .company-img {
+  width: 80px;
+}
+.job-detail .col-4 input:hover {
+  border-color: #ffbb33;
+}
+.job-detail .col-4 textarea {
+  border-color: rgba(128, 128, 128, 0.329);
+  border-radius: 6px;
+}
+.job-detail .col-4 textarea:hover {
+  border-color: #ffbb33;
+}
+.job-detail .col-4 textarea::-moz-placeholder {
+  padding: 10px;
+}
+.job-detail .col-4 textarea::placeholder {
+  padding: 10px;
+}
+.job-detail .col-8 {
+  margin-top: 40px;
+  padding: 20px;
+}
+.job-detail .col-8 h1 {
+  font-weight: bolder;
+}
+.job-detail .col-8 img {
+  width: 100%;
+  border-radius: 10px;
+}
+.job-detail .col-8 .text {
+  font-size: 14px;
+  opacity: 0.8;
+}
+.job-detail .col-8 ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.job-detail .col-8 ul li .fa-arrow-right {
+  color: #ffbb33;
+}
+.job-detail .col-8 ul li span {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-left: 8px;
 }
 
 footer {

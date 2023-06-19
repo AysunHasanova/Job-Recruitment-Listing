@@ -2,7 +2,7 @@ let searchInput = document.querySelector("#search");
 let Team_API = "http://localhost:3000/team";
 let tBody = document.querySelector("tbody");
 let member = document.querySelector("#member");
-let job = document.querySelector("#job");
+let position = document.querySelector("#position");
 let instaLink = document.querySelector("#insta");
 let behanceLink = document.querySelector("#behance");
 let googleLink = document.querySelector("#google");
@@ -13,6 +13,22 @@ let submitBtn = document.querySelector(".btn-primary");
 let editedId;
 let base64;
 
+let body = document.querySelector("body");
+let modeToggle = body.querySelector(".mode-toggle");
+let getMode = localStorage.getItem("mode");
+if (getMode && getMode === "dark") {
+  body.classList.toggle("dark");
+  tBody.classList.add("table-dark");
+}
+modeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  if (body.classList.contains("dark")) {
+    localStorage.setItem("mode", "dark");
+  } else {
+    localStorage.setItem("mode", "light");
+  }
+});
+
 $(document).ready(function () {
   $("#menu-toggle").click(function (e) {
     e.preventDefault();
@@ -20,6 +36,7 @@ $(document).ready(function () {
     $(".admin").toggleClass("adminContent");
   });
 });
+
 
 async function drawTable(arr) {
   tBody.innerHTML = "";
@@ -29,7 +46,7 @@ async function drawTable(arr) {
       <td class="id">${element.id}</td>
       <td><img src=${element.image}></td>
       <td>${element.member}</td>
-      <td>${element.job}</td>
+      <td>${element.position}</td>
       <td><a href=${element.insta}><i class="fa-brands fa-instagram"></i></a></td>
       <td><a href=${element.behance}><i class="fa-brands fa-behance"></i></a></td>
       <td><a href=${element.google}><i class="fa-brands fa-google"></i></a></td>
@@ -60,7 +77,7 @@ async function deleted(id) {
 async function createMember() {
   const teamObj = {
     member: member.value,
-    job: job.value,
+    position: position.value,
     insta: instaLink.value,
     behance: behanceLink.value,
     google: googleLink.value,
@@ -74,7 +91,7 @@ async function createMember() {
 async function editTeam(id) {
   const teamObj = {
     member: member.value,
-    company: job.value,
+    position: position.value,
     insta: instaLink.value,
     behance: behanceLink.value,
     google: googleLink.value,
@@ -114,7 +131,7 @@ async function editFun(id) {
   let res = await axios(`${Team_API}/${id}`);
   let data = await res.data;
   member.value = data.member;
-  job.value = data.job;
+  position.value = data.position;
   instaLink.value = data.insta;
   behanceLink.value = data.behance;
   googleLink.value = data.google;
@@ -134,7 +151,7 @@ form.addEventListener("submit", (e) => {
   }
 
   member.value = "";
-  job.value = "";
+  position.value = "";
   instaLink.value = "";
   behanceLink.value = "";
   googleLink.value = "";
@@ -142,11 +159,10 @@ form.addEventListener("submit", (e) => {
 });
 
 searchInput.addEventListener("input", async function (e) {
-    let res = await axios(Team_API);
-    let data = await res.data;
-    let filtered = data
-      .filter((item) =>
-        item.member.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase()) 
-      );
-    drawTable(filtered);
-  });
+  let res = await axios(Team_API);
+  let data = await res.data;
+  let filtered = data.filter((item) =>
+    item.member.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())
+  );
+  drawTable(filtered);
+});

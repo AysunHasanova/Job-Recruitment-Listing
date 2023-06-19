@@ -1,16 +1,36 @@
 let Job_API = "http://localhost:3000/jobs";
+let Mock_API = "http://localhost:3000/users";
 let jobBody = document.querySelector(".jobTable");
 let submitBtn = document.querySelector(".btn-primary");
 let jobName = document.querySelector("#jobName");
+let aboutJob = document.querySelector("#about");
 let companyName = document.querySelector("#companyName");
 let city = document.querySelector("#city");
 let country = document.querySelector("#country");
-let firstPrice = document.querySelector("#firstPrice");
-let lastPrice = document.querySelector("#lastPrice");
+let price = document.querySelector("#firstPrice");
 let imgFile = document.querySelector("#image");
 let jobForm = document.querySelector("form");
+let tBody = document.querySelector("tbody");
+let searchInput = document.querySelector("#search");
+
 let base64;
 let editedId;
+
+let body = document.querySelector("body");
+let modeToggle = body.querySelector(".mode-toggle");
+let getMode = localStorage.getItem("mode");
+if (getMode && getMode === "dark") {
+  body.classList.toggle("dark");
+  tBody.classList.add("table-dark");
+}
+modeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  if (body.classList.contains("dark")) {
+    localStorage.setItem("mode", "dark");
+  } else {
+    localStorage.setItem("mode", "light");
+  }
+});
 
 $(document).ready(function () {
   $("#menu-toggle").click(function (e) {
@@ -29,14 +49,15 @@ async function drawTable(arr) {
     <td><img src=${element.image}></td>
     <td>${element.company}</td>
     <td>${element.nameJob}</td>
+    <td>${element.aboutJob}</td>
     <td>${element.country},${element.city}</td>
-    <td>$${element.firstprice}k-${element.lastprice}k</td>
+    <td>$${element.price}</td>
     <td>
-    <button class="primary edit text-light" onclick="window.dialog.showModal();editFun(${element.id});">
+    <a class="primary edit text-success" onclick="window.dialog.showModal();editFun(${element.id});">
     <i class="fa-solid fa-pen-nib"></i>
-        </button>
+        </a>
     
-    <button class="btn btn-danger text-light" onclick=deleteUser(${element.id})><i class="fa-solid fa-trash"></i></button>
+    <a class=" text-danger" onclick=deleteUser(${element.id})><i class="fa-solid fa-trash"></i></a>
     </td>
     </tr>
     `;
@@ -58,10 +79,10 @@ async function createJob() {
   const jobObj = {
     nameJob: jobName.value,
     company: companyName.value,
+    aboutJob: aboutJob.value,
     city: city.value,
     country: country.value,
-    firstprice: firstPrice.value,
-    lastprice: lastPrice.value,
+    price: price.value,
     image: base64,
   };
   await axios.post(Job_API, jobObj);
@@ -72,10 +93,10 @@ async function editJob(id) {
   const jobObj = {
     nameJob: jobName.value,
     company: companyName.value,
+    aboutJob: aboutJob.value,
     city: city.value,
     country: country.value,
-    firstprice: firstPrice.value,
-    lastprice: lastPrice.value,
+    price: price.value,
     image: base64,
   };
   await axios.patch(`${Job_API}/${id}`, jobObj);
@@ -114,8 +135,8 @@ async function editFun(id) {
   companyName.value = data.company;
   city.value = data.city;
   country.value = data.country;
-  firstPrice.value = data.firstprice;
-  lastPrice.value = data.lastprice;
+  price.value = data.price;
+  aboutJob.value = data.aboutJob;
 
   submitBtn.innerHTML = "Edit";
 }
@@ -134,6 +155,17 @@ jobForm.addEventListener("submit", (e) => {
   companyName.value = "";
   city.value = "";
   country.value = "";
-  firstPrice.value = "";
-  lastPrice.value = "";
+  price.value = "";
+  aboutJob.value = "";
+});
+
+searchInput.addEventListener("input", async function (e) {
+  let res = await axios(Job_API);
+  let data = await res.data;
+  let filtered = data.filter((item) =>
+    item.company
+      .toLocaleLowerCase()
+      .includes(e.target.value.toLocaleLowerCase())
+  );
+  drawTable(filtered);
 });

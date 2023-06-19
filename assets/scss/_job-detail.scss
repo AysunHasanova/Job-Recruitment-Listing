@@ -1,0 +1,58 @@
+.job-detail {
+  .col-4 {
+    margin-top: 40px;
+    padding: 0 !important;
+    .card {
+      padding: 20px;
+      box-shadow: 1px 2px 20px #0000001f;
+      .company-img {
+        width: 80px;
+      }
+    }
+    input{
+        &:hover{
+            border-color: #ffbb33;
+        }
+    }
+    textarea{
+        border-color: rgba(128, 128, 128, 0.329);
+        border-radius: 6px;
+        &:hover{
+            border-color: #ffbb33;
+        }
+       &::placeholder{
+        padding: 10px;
+       }
+    }
+  }
+  .col-8 {
+    margin-top: 40px;
+    padding: 20px;
+    h1 {
+      font-weight: bolder;
+    }
+    img {
+      width: 100%;
+
+      border-radius: 10px;
+    }
+    .text {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    ul {
+      margin: 0 !important;
+      padding: 0 !important;
+      li {
+        .fa-arrow-right {
+          color: #ffbb33;
+        }
+        span {
+          font-size: 14px;
+          opacity: 0.8;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
