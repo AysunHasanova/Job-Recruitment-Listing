@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./scss/admin.css" />
+    <title>Admin Dashbord</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="admin-panel">
+            <img src="/images/redhead-young-woman.jpg" alt="" />
+            <p>Admin</p>
+            <p>aysunhsnva@gmail.com</p>
+          </li>
+          <hr />
+          <li>
+            <a href="admin.html"><i class="fa-solid fa-list"></i> Job List</a>
+          </li>
+          <li>
+            <a href="users.html"><i class="fa-solid fa-user"></i> Users</a>
+          </li>
+          <li>
+            <a href="messages.html"
+              ><i class="fa-solid fa-message"></i> Messages</a
+            >
+          </li>
+          <li>
+            <a href="group.html"
+              ><i class="fa-solid fa-people-group"></i> Team</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <a href="#" class="btn" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container admin">
+      <h1>Messages</h1>
+      <div class="search">
+        <input
+          type="search"
+          name=""
+          id="search"
+          class="form-control"
+          placeholder="Search message..."
+        />
+      </div>
+      <div class="post">
+        <button class="primary" onclick="window.dialog.showModal();">
+          Post
+        </button>
+
+        <dialog id="dialog">
+          <form>
+            <div class="mb-3">
+              <label for="Member" class="form-label">Member :</label>
+              <input
+                type="text"
+                class="form-control"
+                id="member"
+                placeholder="Enter job member..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="job" class="form-label">Job :</label>
+              <input
+                type="text"
+                class="form-control"
+                id="job"
+                placeholder="Enter job..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="insta" class="form-label">Instagram :</label>
+              <input
+                type="text"
+                class="form-control"
+                id="insta"
+                placeholder="Enter Instagram link..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="behance" class="form-label">Behance :</label>
+              <input
+                type="text"
+                class="form-control"
+                id="behance"
+                placeholder="Enter Behance link..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="google" class="form-label">Google :</label>
+              <input
+                type="text"
+                class="form-control"
+                id="google"
+                placeholder="Enter Google link..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="windows" class="form-label">Windows :</label>
+              <input
+                type="text"
+                class="form-control"
+                id="windows"
+                placeholder="Enter Windows link..."
+              />
+            </div>
+            <div class="mb-3">
+              <input type="file" class="form-control" id="image" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <button onclick="window.dialog.close();" aria-label="close" class="x">
+            ❌
+          </button>
+        </dialog>
+      </div>
+      <table class="table table-striped table-hover" id="teamTable">
+        <thead>
+          <th>ID</th>
+          <th>img</th>
+          <th>Member</th>
+          <th>Job</th>
+          <th>Instagram</th>
+          <th>Behance</th>
+          <th>Google</th>
+          <th>Windows</th>
+          <th><i class="fa-solid fa-screwdriver-wrench"></i></th>
+        </thead>
+        <tbody class="teamTable"></tbody>
+      </table>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+      integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+      integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/assets/js/group.js"></script>
+  </body>
+</html>
