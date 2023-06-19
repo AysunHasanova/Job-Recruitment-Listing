@@ -159,4 +159,20 @@
 #jobTable .id,
 #userTable .id {
   font-weight: bolder;
+}
+
+.row {
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.row .col {
+  padding: 10px;
+  position: relative;
+  width: 350px;
+  margin-bottom: 10px;
+}
+.row .col .text-danger {
+  position: absolute;
+  right: 15px;
+  font-size: 20px;
 }/*# sourceMappingURL=admin.css.map */

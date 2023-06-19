@@ -1,0 +1,15 @@
+.row{
+    column-gap: 10px;
+    
+    .col{
+        padding: 10px;
+        position: relative;
+        width: 350px;
+        margin-bottom: 10px;
+        .text-danger{
+            position: absolute;
+            right: 15px;
+            font-size: 20px;
+        }
+    }
+}

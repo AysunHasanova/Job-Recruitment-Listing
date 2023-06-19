@@ -1,10 +1,14 @@
-let nums = document.querySelectorAll(".num");
-let numbers = document.querySelectorAll(".number");
-let interval = 5000;
-let intervalNum = 8000;
+let contactForm = document.querySelector(".contact-form");
+let Message_API = "http://localhost:3000/messages";
+let Mock_API = "http://localhost:3000/users";
+let nameInput = document.querySelector("#name");
+let emailInput = document.querySelector("#email");
+let subjectInput = document.querySelector("#subject");
+let phoneInput = document.querySelector("#phone");
+let message = document.querySelector("#message");
+let contactRow = document.querySelector(".contact");
 let menu = document.querySelector("#menu");
 let nav = document.querySelector("nav");
-let Mock_API = "http://localhost:3000/users";
 let loginEmail = document.querySelector(".login-email");
 let loginPassword = document.querySelector(".login-password");
 let username = document.querySelector(".username");
@@ -18,34 +22,6 @@ formContainer = document.querySelector(".form_container");
 formCloseBtn = document.querySelector(".form_close");
 signupBtn = document.querySelector("#signup");
 loginBtn = document.querySelector("#login");
-let Job_API = "http://localhost:3000/jobs";
-let rowJob = document.querySelector("#job-row");
-
-nums.forEach((num) => {
-  let startNum = 0;
-  let endNum = parseInt(num.getAttribute("data-val"));
-  let duration = Math.floor(interval / endNum);
-  let counter = setInterval(function () {
-    startNum += 10;
-    num.textContent = startNum;
-    if (startNum == endNum) {
-      clearInterval(counter);
-    }
-  }, duration);
-});
-
-numbers.forEach((num) => {
-  let startNum = 0;
-  let endNum = parseInt(num.getAttribute("data-val"));
-  let duration = Math.floor(intervalNum / endNum);
-  let counter = setInterval(function () {
-    startNum += 1;
-    num.textContent = startNum;
-    if (startNum == endNum) {
-      clearInterval(counter);
-    }
-  }, duration);
-});
 
 menu.addEventListener("click", function () {
   nav.classList.toggle("show");
@@ -119,8 +95,7 @@ async function api() {
       setSuccess(username);
       setError(signEmail, "Email is required");
       setError(signPassword, "Password is required");
-    }
-    else{
+    } else {
       setError(signEmail, "Email is required");
       setError(signPassword, "Password is required");
       setError(username, "Username is required");
@@ -179,53 +154,24 @@ const setSuccess = (element) => {
   inputControl.classList.remove("error");
 };
 
-function drawCard(arr) {
-  rowJob.innerHTML = "";
-  arr.forEach((element) => {
-    rowJob.innerHTML += `
-    <div class="col col-4 card py-3 px-2">
-            <div class="d-flex align-items-center justify-content-around">
-              <img src=${element.image} alt="" />
-              <div class="mx-3">
-                <p class="city">${element.country}, ${element.city}</p>
-                <p class="marka">${element.company}</p>
-              </div>
-            </div>
-            <hr />
-            <div class="d-flex align-items-center justify-content-between">
-              <p><i class="fa-solid fa-clock-rotate-left"></i> Remote</p>
-              <p><i class="fa-solid fa-clock-rotate-left"></i> Full time</p>
-            </div>
-            <p class="pb-3">
-              <i class="fa-solid fa-clock-rotate-left"></i> Part time
-            </p>
-            <h5>${element.nameJob}</h5>
-            <p class="text-start">
-              ${element.aboutJob}
-            </p>
-            <div class="text-start">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-regular fa-star-half-stroke"></i>
-            </div>
-            <div class="text-start">
-              <i class="fa-solid fa-dollar-sign"></i> <span>$${element.firstprice}k-$${element.lastprice}k</span>
-
-              
-            </div>
-            <div class="text-start my-4">
-              <a href="" class="add"><i class="fa-solid fa-bookmark"></i></a>
-            </div>
-          </div>
-    `;
+$(document).ready(function () {
+  $("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("menuDisplayed");
+    $(".admin").toggleClass("adminContent");
   });
-}
+});
 
-async function cards() {
-  let res = await axios(Job_API);
-  let data = res.data;
-  drawCard(data);
-}
-cards();
+contactForm.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  let obj = {
+    name: nameInput.value,
+    email: emailInput.value,
+    phone: phoneInput.value,
+    subject: subjectInput.value,
+    message: message.value,
+  };
+  await axios.post(Message_API, obj);
+});
+
