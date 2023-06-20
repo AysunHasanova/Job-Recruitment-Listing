@@ -20,8 +20,21 @@ signupBtn = document.querySelector("#signup");
 loginBtn = document.querySelector("#login");
 let Job_API = "http://localhost:3000/jobs";
 let rowJob = document.querySelector("#job-row");
-let categorySearch = document.querySelector("#category-search");
-let areaSearch = document.querySelector("#area-search");
+let jobSearch = document.querySelector(".search");
+let userProfile = document.querySelector(".user-profile");
+let savedJob = document.querySelector(".save");
+let idUser = new URLSearchParams(window.location.search).get("id");
+
+axios(`${Mock_API}/${idUser}`).then((res) => {
+  userProfile.innerHTML = `<a href="" class="text-light" ><i class="fa-solid fa-user"></i> ${res.data.username}</a>
+  <a href="index.html" class="text-light mx-1" onclick=deleteUser(${idUser})><i class="fa-solid fa-right-from-bracket"></i></a>
+  `;
+  savedJob.innerHTML = `<a href="./saved.html">Saved Job</a>`;
+  formOpenBtn.style.display = "none"
+});
+async function deleteUser(id) {
+  await axios.delete(`${Mock_API}/${id}`);
+}
 
 nums.forEach((num) => {
   let startNum = 0;
@@ -82,12 +95,10 @@ function drawCard(arr) {
             </div>
             <div class="text-start">
               <i class="fa-solid fa-dollar-sign"></i> <span>$${element.price}</span>
-
-              
             </div>
             <div class="text-start my-4">
-              <a href="" class="add"><i class="fa-solid fa-bookmark"></i></a>
-              <a href="detail.html?id=${element.id}" class="detail">APPLY</a>
+              <a href="" class="add" onclick=saved(${element.id})><i class="fa-solid fa-bookmark"></i></a>
+              <button onclick=apply(${element.id}) class="detail">APPLY</button>
             </div>
           </div>
     `;
@@ -101,23 +112,39 @@ async function cards() {
 }
 cards();
 
-categorySearch.addEventListener("change", async function (e) {
+jobSearch.addEventListener("input", async function (e) {
   let res = await axios(Job_API);
   let data = await res.data;
   let filtered = data.filter((item) =>
-    item.nameJob
-      .toLocaleLowerCase()
-      .includes(e.target.value.toLocaleLowerCase())
+    `${item.nameJob.toLocaleLowerCase()},${item.company.toLocaleLowerCase()}`.includes(
+      e.target.value.toLocaleLowerCase()
+    )
   );
   drawCard(filtered);
 });
-areaSearch.addEventListener("change", async function (e) {
-  let res = await axios(Job_API);
-  let data = await res.data;
-  let filtered = data.filter((item) =>
-    item.country
-      .toLocaleLowerCase()
-      .includes(e.target.value.toLocaleLowerCase())
-  );
-  drawCard(filtered);
-});
+let allJob = JSON.parse(localStorage.getItem("Saved")) || [];
+// console.log(allJob);
+async function saved(id) {
+  if (idUser) {
+    let res = await axios(Job_API);
+    let data = await res.data;
+    let selectedObj = allJob.find((item) => item.id == id);
+    if (!allJob.includes(selectedObj)) {
+      let savedJob = data.find((obj) => obj.id == id);
+      allJob.push(savedJob);
+      localStorage.setItem("Saved", JSON.stringify(allJob));
+    } else {
+      alert("You are already saved");
+    }
+  } else {
+    alert("You need sign");
+  }
+}
+
+function apply(id) {
+  if (idUser) {
+    window.location.href = `detail.html?id=${id}`;
+  } else {
+    alert("You need sign");
+  }
+}

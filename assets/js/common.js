@@ -93,10 +93,10 @@ async function api() {
       );
 
       if (obj) {
-        if (obj.isAdmin) {
-          window.location = "/admin/admin.html";
+        if (obj.isAdmin == "true") {
+          window.location = `/admin/admin.html?id=${obj.id}`;
         } else {
-          window.location = "index.html";
+          window.location = `index.html?id=${obj.id}`;
         }
       } else if (wrongPassword) {
         setSuccess(loginEmail);
