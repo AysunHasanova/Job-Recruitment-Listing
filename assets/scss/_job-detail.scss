@@ -1,7 +1,15 @@
 .job-detail {
+
+ .row{
+  @media only screen and (max-width:992px){
+    flex-direction: column;
+  }
   .col-4 {
     margin-top: 40px;
     padding: 0 !important;
+    @media only screen and (max-width:992px){
+    width: 100%;
+    }
     .card {
       padding: 20px;
       box-shadow: 1px 2px 20px #0000001f;
@@ -24,10 +32,26 @@
         padding: 10px;
        }
     }
+    button{
+      @media only screen and (max-width:992px){
+        position: relative;
+        bottom: 20px;
+        left: 10px;
+      }
+    }
   }
   .col-8 {
     margin-top: 40px;
     padding: 20px;
+    @media only screen and (max-width:992px){
+      width: 100%;
+    }
+    .fa-clock-rotate-left{
+      color: #ffbb33;
+    }
+    .fa-star,.fa-star-half-stroke{
+      color: #55204e;
+    }
     h1 {
       font-weight: bolder;
     }
@@ -35,6 +59,11 @@
       width: 100%;
 
       border-radius: 10px;
+    }
+    .row{
+      @media only screen and (max-width:992px){
+        flex-direction: row;
+      }
     }
     .text {
       font-size: 14px;
@@ -55,4 +84,5 @@
       }
     }
   }
+ }
 }

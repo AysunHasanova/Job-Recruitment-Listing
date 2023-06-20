@@ -29,8 +29,7 @@ axios(`${Mock_API}/${idUser}`).then((res) => {
   userProfile.innerHTML = `<a href="" class="text-light" ><i class="fa-solid fa-user"></i> ${res.data.username}</a>
   <a href="index.html" class="text-light mx-1" onclick=deleteUser(${idUser})><i class="fa-solid fa-right-from-bracket"></i></a>
   `;
-  savedJob.innerHTML = `<a href="./saved.html">Saved Job</a>`;
-  formOpenBtn.style.display = "none"
+  savedJob.innerHTML = `<a href="./saved.html"><i class="fa-solid fa-bookmark"></i></a>`;
 });
 async function deleteUser(id) {
   await axios.delete(`${Mock_API}/${id}`);
@@ -71,7 +70,7 @@ function drawCard(arr) {
               <img src=${element.image} alt="" />
               <div class="mx-3">
                 <p class="city">${element.country}, ${element.city}</p>
-                <p class="marka">${element.company}</p>
+                <h3 class="marka">${element.company}</h3>
               </div>
             </div>
             <hr />

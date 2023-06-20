@@ -83,13 +83,6 @@
       "password": "user",
       "isAdmin": "false",
       "id": 15
-    },
-    {
-      "username": "Aysun",
-      "email": "aysunhsnva@gmail.com",
-      "password": "2003aysun",
-      "isAdmin": "false",
-      "id": 16
     }
   ],
   "jobs": [
@@ -237,6 +230,15 @@
       "message": "Qui velit commodi e",
       "company": "Marks and Moody Plc",
       "id": 4
+    },
+    {
+      "name": "Yuri Reyes",
+      "email": "cigonyxol@mailinator.com",
+      "phone": "+1 (575) 817-8038",
+      "message": "Quis aut possimus e",
+      "company": "Canva Studios",
+      "cv": "C:\\fakepath\\A+I.exe",
+      "id": 5
     }
   ]
 }
