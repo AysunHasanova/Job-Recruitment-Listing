@@ -1,5 +1,4 @@
 # Job-Recruitment-Listing
-https://aysunhasanova.github.io/Job-Recruitment-Listing/
 Job Recruitment Listing
 
 A responsive job recruitment platform built with HTML, CSS, and JavaScript. The application allows users to browse job opportunities and filter listings based on skills and categories. The project focuses on creating a clean user experience, responsive design, and dynamic data rendering.
@@ -7,7 +6,7 @@ A responsive job recruitment platform built with HTML, CSS, and JavaScript. The 
 Live Demo
 
 🚀 Live Website:
-Job Recruitment Listing Demo
+[Job Recruitment Listing Demo](https://aysunhasanova.github.io/Job-Recruitment-Listing/)
 
 Features
 Browse available job listings
